@@ -1,0 +1,31 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-logo" href="/" aria-label="LVNS SPACE PROJECT home">
+      <img src="https://space.lne.st/wp-content/themes/lnest_space/images/common/title__logo.png?v=1.2" alt="LVNS SPACE PROJECT" width="440" height="56" />
+    </a>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">メニューを開く</span>
+    </button>
+
+    <nav class="site-nav" id="site-navigation" aria-label="メインナビゲーション">
+      <a href="/#news">NEWS</a>
+      <a href="/about/">HISTORY</a>
+      <a href="/#partner">PARTNER</a>
+      <a href="/#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const menuButton = document.querySelector<HTMLButtonElement>('.menu-button');
+
+  menuButton?.addEventListener('click', () => {
+    const isOpen = header?.classList.toggle('menu-open') ?? false;
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+</script>
