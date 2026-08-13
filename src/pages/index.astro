@@ -8,6 +8,7 @@ const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
 
 const approaches = [
   {
+    slug: 'question',
     number: '01',
     name: '研究テーマ創出',
     catchphrase: '宇宙だからこそ挑戦する「問い」をつくる。',
@@ -15,6 +16,7 @@ const approaches = [
     flow: 'QUESTION',
   },
   {
+    slug: 'access',
     number: '02',
     name: '宇宙実験アクセス基盤',
     catchphrase: '研究に最適な「宇宙への行き方」をつくる。',
@@ -22,6 +24,7 @@ const approaches = [
     flow: 'ACCESS',
   },
   {
+    slug: 'experiment',
     number: '03',
     name: '宇宙実験基盤創出',
     catchphrase: '宇宙で「できる実験」を増やす。',
@@ -29,6 +32,7 @@ const approaches = [
     flow: 'EXPERIMENT',
   },
   {
+    slug: 'value',
     number: '04',
     name: '価値基準創出',
     catchphrase: '宇宙から、新しい「価値のものさし」をつくる。',
@@ -84,7 +88,7 @@ const approaches = [
       </div>
       <div class="approach-grid">
         {approaches.map((approach, index) => (
-          <article class="approach-card">
+          <a class="approach-card" href={`/approach/${approach.slug}/`}>
             <div class="approach-card__topline">
               <p class="approach-card__number">{approach.number}</p>
               <span class="approach-card__flow">{approach.flow}</span>
@@ -125,18 +129,18 @@ const approaches = [
             <h3>{approach.name}</h3>
             <p class="approach-card__catch">{approach.catchphrase}</p>
             <p class="approach-card__description">{approach.description}</p>
-          </article>
+          </a>
         ))}
       </div>
       <div class="approach-flow" aria-label="4つのアプローチをつなぐ循環">
         <p class="approach-flow__label">4つのアプローチをつなぐ</p>
         <div class="approach-flow__steps">
           {approaches.map((approach, index) => (
-            <div class="approach-flow__step">
+            <a class="approach-flow__step" href={`/approach/${approach.slug}/`}>
               <span>{approach.flow}</span>
               <strong>{['問いをつくる', '宇宙へつなぐ', '実験できるようにする', '価値に変える'][index]}</strong>
               {index < approaches.length - 1 && <i aria-hidden="true">→</i>}
-            </div>
+            </a>
           ))}
         </div>
         <p class="approach-flow__result">新しい研究テーマ・産業へ</p>
