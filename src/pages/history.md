@@ -4,6 +4,12 @@ title: HISTORY
 description: LVNS SPACE PROJECTの活動の歩み
 ---
 
+<div class="history-intro">
+  <p class="history-intro__kicker">FROM 2006 TO NOW</p>
+  <h2>宇宙を起点に、<br /><span>未来をつくる歩み。</span></h2>
+  <p>教育、研究、ものづくりを通じて、宇宙と地球の未来を考えてきた活動の記録です。</p>
+</div>
+
 <table class="history-table">
   <thead>
     <tr>
