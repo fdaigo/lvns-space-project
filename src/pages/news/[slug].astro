@@ -1,1 +1,46 @@
-zsh:1: no matches found: src/pages/news/[slug].astro
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.heroImage}
+  type="article"
+>
+  <article class="news-article">
+    <header class="news-article__header">
+      <div class="content-inner">
+        <a class="back-link" href="/news/">← NEWS一覧へ戻る</a>
+        <div class="news-card__meta">
+          <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('ja-JP')}</time>
+          {post.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>
+      </div>
+    </header>
+    <div class="news-article__hero">
+      <img src={post.data.heroImage} alt="" />
+    </div>
+    <div class="content-inner markdown-content news-article__content">
+      <Content />
+      {post.data.updatedDate && (
+        <p class="updated-date">最終更新：{post.data.updatedDate.toLocaleDateString('ja-JP')}</p>
+      )}
+    </div>
+  </article>
+</BaseLayout>
