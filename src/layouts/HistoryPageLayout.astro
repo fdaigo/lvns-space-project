@@ -1,0 +1,28 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <article class="history-page">
+    <header class="history-hero">
+      <div class="history-hero__overlay"></div>
+      <div class="history-hero__content">
+        <p class="history-hero__title"><span>H</span>istory</p>
+        <p class="history-hero__subtitle">{frontmatter.title}</p>
+      </div>
+      <a class="language-tab" href="#history-content">English</a>
+    </header>
+
+    <nav class="history-breadcrumb content-inner" aria-label="Breadcrumb">
+      <a href="/">HOME</a>
+      <span aria-hidden="true">|</span>
+      <span>{frontmatter.title}</span>
+    </nav>
+
+    <div id="history-content" class="history-content content-inner">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
