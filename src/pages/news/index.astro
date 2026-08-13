@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('news', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout title="News" description="LVNS SPACE PROJECTの最新ニュース">
+  <section class="listing-page">
+    <div class="content-inner">
+      <header class="page-heading page-heading--compact">
+        <p class="eyebrow">LVNS SPACE PROJECT</p>
+        <h1>NEWS</h1>
+        <p>プロジェクトからのお知らせ</p>
+      </header>
+      <div class="news-list">
+        {posts.map((post) => (
+          <article class="news-list-item">
+            <a href={'/news/' + post.id + '/'}>
+              <div class="news-list-item__image-wrap">
+                <img src={post.data.heroImage} alt="" loading="lazy" />
+              </div>
+              <div class="news-list-item__body">
+                <div class="news-card__meta">
+                  <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('ja-JP')}</time>
+                  {post.data.tags.map((tag) => <span>{tag}</span>)}
+                </div>
+                <h2>{post.data.title}</h2>
+                <p>{post.data.description}</p>
+                <span class="text-link">READ MORE <span>↗</span></span>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
