@@ -17,7 +17,7 @@ src/
   components/       共通ヘッダー、フッター
   content/news/     ニュース本文（Markdown / MDX）
   layouts/          共通レイアウトとMarkdownページ用レイアウト
-  pages/            URLになるページとニュースルート
+  pages/            URLになるページ、HISTORY、ニュースルート
   styles/           サイト全体のCSS
   content.config.ts Content Collectionのスキーマ
 public/assets/      ロゴと宇宙写真などの静的アセット
