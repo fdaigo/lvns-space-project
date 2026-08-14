@@ -1,22 +1,43 @@
+---
+import { getLocalizedPath, type Locale } from '../utils/i18n';
+
+const { lang = 'ja' } = Astro.props as { lang?: Locale };
+const isEnglish = lang === 'en';
+const languagePath = getLocalizedPath(Astro.url.pathname, isEnglish ? 'ja' : 'en');
+const hasPageLanguageTab = ['/', '/en/', '/history/', '/en/history/'].includes(Astro.url.pathname);
+const navigation = isEnglish
+  ? [
+      { href: '/en/#news', label: 'NEWS' },
+      { href: '/en/about/', label: 'ABOUT' },
+      { href: '/en/history/', label: 'HISTORY' },
+      { href: '/en/#partner', label: 'PARTNER' },
+      { href: '/en/#contact', label: 'CONTACT' },
+    ]
+  : [
+      { href: '/#news', label: 'NEWS' },
+      { href: '/about/', label: 'ABOUT' },
+      { href: '/history/', label: 'HISTORY' },
+      { href: '/#partner', label: 'PARTNER' },
+      { href: '/#contact', label: 'CONTACT' },
+    ];
+---
+
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="site-logo" href="/" aria-label="LVNS SPACE PROJECT home">
+    <a class="site-logo" href={isEnglish ? '/en/' : '/'} aria-label={isEnglish ? 'LVNS SPACE PROJECT home' : 'LVNS SPACE PROJECT ホーム'}>
       <img src="https://space.lne.st/wp-content/themes/lnest_space/images/common/title__logo.png?v=1.2" alt="LVNS SPACE PROJECT" width="440" height="56" />
     </a>
 
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label={isEnglish ? 'Open menu' : 'メニューを開く'}>
       <span></span>
       <span></span>
       <span></span>
-      <span class="sr-only">メニューを開く</span>
+      <span class="sr-only">{isEnglish ? 'Open menu' : 'メニューを開く'}</span>
     </button>
 
-    <nav class="site-nav" id="site-navigation" aria-label="メインナビゲーション">
-      <a href="/#news">NEWS</a>
-      <a href="/about/">ABOUT</a>
-      <a href="/history/">HISTORY</a>
-      <a href="/#partner">PARTNER</a>
-      <a href="/#contact">CONTACT</a>
+    <nav class="site-nav" id="site-navigation" aria-label={isEnglish ? 'Main navigation' : 'メインナビゲーション'}>
+      {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+      {!hasPageLanguageTab && <a class="site-nav__language" href={languagePath} lang={isEnglish ? 'ja' : 'en'}>{isEnglish ? '日本語' : 'English'}</a>}
     </nav>
   </div>
 </header>
