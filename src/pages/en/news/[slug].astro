@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getEnglishNews } from '../../../data/news-en';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const translation = getEnglishNews(post);
+---
+
+<BaseLayout lang="en" title={translation.title} description={translation.description} image={post.data.heroImage} type="article">
+  <article class="news-article">
+    <header class="news-article__header"><div class="content-inner"><a class="back-link" href="/en/news/">← BACK TO NEWS</a><div class="news-card__meta"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US')}</time>{translation.tags.map((tag) => <span>{tag}</span>)}</div><h1>{translation.title}</h1><p>{translation.description}</p></div></header>
+    <div class="news-article__hero"><img src={post.data.heroImage} alt="" /></div>
+    <div class="content-inner markdown-content news-article__content">
+      {translation.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      {translation.officialUrl && <p><strong>Official announcement:</strong> <a href={translation.officialUrl} target="_blank" rel="noreferrer">{translation.officialLabel}</a></p>}
+      {post.data.updatedDate && <p class="updated-date">Last updated: {post.data.updatedDate.toLocaleDateString('en-US')}</p>}
+    </div>
+  </article>
+</BaseLayout>
