@@ -2,9 +2,11 @@
 import BaseLayout from './BaseLayout.astro';
 
 const { frontmatter } = Astro.props;
+const lang = frontmatter.lang ?? 'ja';
+const isEnglish = lang === 'en';
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} lang={lang}>
   <article class="history-page">
     <header class="history-hero">
       <div class="history-hero__overlay"></div>
@@ -12,7 +14,7 @@ const { frontmatter } = Astro.props;
         <p class="history-hero__title"><span>H</span>istory</p>
         <p class="history-hero__subtitle">{frontmatter.title}</p>
       </div>
-      <a class="language-tab" href="#history-content">English</a>
+      <a class="language-tab" href={isEnglish ? '/history/' : '/en/history/'} lang={isEnglish ? 'ja' : 'en'}>{isEnglish ? '日本語' : 'English'}</a>
     </header>
 
     <nav class="history-breadcrumb content-inner" aria-label="Breadcrumb">
