@@ -1,0 +1,42 @@
+---
+import AboutResearchIllustration from '../../components/AboutResearchIllustration.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout lang="en" title="About" description="Why build a research institute in space? We see space as a research environment for new discoveries.">
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="content-inner">
+      <div class="about__heading"><p class="eyebrow">WHY SPACE RESEARCH</p><h1 class="section-title" id="about-title">ABOUT</h1><p class="about__question">Why build a research institute in space?</p></div>
+      <div class="about-layout">
+        <div class="about-copy">
+          <p>Our research and manufacturing have developed within the environment of Earth.</p>
+          <p>There is gravity, an atmosphere, and stable temperature and pressure.<br />Taking these conditions for granted, we have made materials, grown cells and crystals, and created a wide range of technologies.</p>
+          <p>But what would happen if we changed those assumptions?</p>
+          <p>Almost no gravity.<br />A vacuum.<br />A different radiation environment.<br />Heat and fluid behavior unlike anything on the ground.</p>
+          <p>Space offers research environments that are difficult to create on Earth.</p>
+          <p>We see space not as a place to travel far away, but as a <strong>research environment that creates new discoveries</strong>.</p>
+          <p>We are not simply taking the research built on Earth and moving it into space.</p>
+          <p>By placing research in a different environment, we discover phenomena, principles, and processes that were previously invisible.</p>
+          <p>We bring those discoveries back to Earth and connect them to the next generation of research, technology, and industry.</p>
+          <p>That is why we are building a “research institute” in space: a system that creates research themes, prepares access to space, develops experiment equipment, and turns results into value.</p>
+          <p class="about-copy__closing"><strong>Add space to the choices available for research and development.</strong><br />That is where LVNS SPACE PROJECT begins.</p>
+        </div>
+        <AboutResearchIllustration />
+      </div>
+      <div class="about-bridge"><p>If we could change the assumptions of research,<br />we might discover engineering that has not yet been found.</p><a href="/en/#vision" class="about-bridge__link"><span>VISION</span><strong>Discover engineering beyond the conventional path through the use of space.</strong><i aria-hidden="true">↓</i></a></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const aboutSection = document.querySelector('.about');
+  if (aboutSection && 'IntersectionObserver' in window) {
+    const aboutObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        aboutSection.classList.add('about--visible');
+        aboutObserver.disconnect();
+      }
+    }, { threshold: 0.18 });
+    aboutObserver.observe(aboutSection);
+  }
+</script>

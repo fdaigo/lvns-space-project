@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import type { Locale } from '../utils/i18n';
 import '../styles/global.css';
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  lang?: Locale;
 }
 
 const {
@@ -15,6 +17,7 @@ const {
   description = '宇宙を使って、延長線上にない工学を発見する。',
   image = 'https://space.lne.st/wp-content/themes/lnest_space/images/top/fva@2x.jpg',
   type = 'website',
+  lang = 'ja',
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? Astro.url;
@@ -24,7 +27,7 @@ const fullTitle = title === 'LVNS SPACE PROJECT' ? title : title + ' | LVNS SPAC
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -36,7 +39,7 @@ const fullTitle = title === 'LVNS SPACE PROJECT' ? title : title + ' | LVNS SPAC
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,300;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Open+Sans:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
-    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ja_JP'} />
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="LVNS SPACE PROJECT" />
     <meta property="og:title" content={fullTitle} />
@@ -49,8 +52,8 @@ const fullTitle = title === 'LVNS SPACE PROJECT' ? title : title + ' | LVNS SPAC
     <meta name="twitter:image" content={imageURL} />
   </head>
   <body>
-    <Header />
+    <Header lang={lang} />
     <main><slot /></main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

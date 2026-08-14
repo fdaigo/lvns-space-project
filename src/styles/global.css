@@ -29,6 +29,9 @@ button { font: inherit; }
 .site-nav a { position: relative; padding: 8px 0; }
 .site-nav a::after { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; background: var(--blue); content: ''; transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
 .site-nav a:hover::after, .site-nav a:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.site-nav__language { margin-left: 5px; padding: 5px 12px !important; border: 1px solid var(--blue); color: var(--blue-dark); font-size: 12px; letter-spacing: .04em; transition: color .25s ease, background .25s ease; }
+.site-nav__language:hover { color: var(--white); background: var(--blue); }
+.site-nav__language::after { display: none; }
 .menu-button { display: none; border: 0; background: transparent; padding: 8px; cursor: pointer; }
 .menu-button span:not(.sr-only) { display: block; width: 28px; height: 2px; margin: 5px 0; background: var(--ink); }
 
@@ -310,6 +313,7 @@ button { font: inherit; }
   .site-nav { position: absolute; top: 76px; right: 0; left: 0; display: none; flex-direction: column; gap: 0; padding: 20px 22px 28px; background: rgba(255,255,255,.97); text-align: right; }
   .site-header.menu-open .site-nav { display: flex; }
   .site-nav a { padding: 7px 0; }
+  .site-nav__language { align-self: flex-end; margin: 8px 0 0; padding: 4px 10px !important; }
   .hero__content { margin-top: 48px; }
   .hero__title-panel { width: 100%; padding: 13px 12px 9px; }
   .hero__organizer { margin: 28px 0 14px; font-size: 18px; }
