@@ -1,0 +1,124 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { approachesEn } from '../../data/approaches-en';
+import { getEnglishNews } from '../../data/news-en';
+
+const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout
+  lang="en"
+  description="Discover engineering beyond gravity. LVNS SPACE PROJECT uses space as a research environment for new engineering."
+>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__slides" aria-hidden="true">
+      <div class="hero__slide hero__slide--a"></div>
+      <div class="hero__slide hero__slide--b"></div>
+      <div class="hero__slide hero__slide--c"></div>
+    </div>
+    <a class="language-tab" href="/" lang="ja">日本語</a>
+    <div class="hero__content">
+      <div class="hero__title-panel">
+        <h1 id="hero-title">LVNS SPACE PROJECT</h1>
+      </div>
+      <p class="hero__organizer">Organized by Leave a Nest</p>
+      <p class="hero__tagline">Discover Engineering Beyond Gravity</p>
+    </div>
+    <a class="scroll-cue" href="#vision"><span>SCROLL</span><i></i></a>
+  </section>
+
+  <section class="vision section-gray" id="vision" aria-labelledby="vision-title">
+    <div class="content-inner">
+      <p class="eyebrow">OUR VISION</p>
+      <h2 class="section-title" id="vision-title">VISION</h2>
+      <p class="vision__lead">Discover engineering beyond the conventional path through the use of space.</p>
+      <div class="vision__body">
+        <p>Engineering has developed within the environment of Earth.<br />There is gravity, an atmosphere, and materials and energy that can be used on the ground. Many technologies have emerged within these familiar conditions.</p>
+        <p>What kind of engineering could emerge if we changed those assumptions?</p>
+        <p>Microgravity, vacuum, radiation, and extreme temperature differences create an environment unlike Earth. LVNS SPACE PROJECT sees space not simply as a place to go, but as a <strong>research environment that cannot easily be created on Earth</strong>.</p>
+        <p>Rather than taking technologies from Earth and carrying them into space, we look for principles and methods beyond the conventional path of development through phenomena and experiments that can only be observed or realized in space.</p>
+        <p>We bring the engineering discovered there back to Earth and connect it to new possibilities for industry and society.</p>
+        <p><strong>Discover engineering beyond the conventional path through the use of space.</strong> This is the vision of LVNS SPACE PROJECT.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach section-black" id="approach" aria-labelledby="approach-title">
+    <div class="content-inner">
+      <p class="eyebrow eyebrow--light">WHAT WE DO</p>
+      <h2 class="section-title section-title--light" id="approach-title">APPROACH</h2>
+      <p class="approach__subtitle">Four approaches to making space a field for research and development</p>
+      <div class="approach__intro">
+        <p>LVNS SPACE PROJECT is not simply a project that takes experiments into space.</p>
+        <p>We create research themes, build ways to access space, prepare environments for experiments, and turn the results into new value.</p>
+        <p><strong>To discover engineering beyond the conventional path through the use of space, we build the research and development system itself through four approaches.</strong></p>
+      </div>
+      <div class="approach-grid">
+        {approachesEn.map((approach, index) => (
+          <a class="approach-card" href={`/en/approach/${approach.slug}/`}>
+            <div class="approach-card__topline">
+              <p class="approach-card__number">{approach.number}</p>
+              <span class="approach-card__flow">{approach.keyword}</span>
+            </div>
+            <div class="approach-card__icon" aria-hidden="true">
+              {index === 0 && <svg viewBox="0 0 24 24" role="img"><path d="M10 2v5.2l-4.6 7.2A3 3 0 0 0 7.9 19h8.2a3 3 0 0 0 2.5-4.6L14 7.2V2" /><path d="M8 10h8M10 2h4" /><path d="M18.5 4.2c0-1.1.8-2 1.9-2s1.9.7 1.9 1.7c0 1.3-1.9 1.5-1.9 2.8" /><circle cx="20.4" cy="8.5" r=".5" fill="currentColor" stroke="none" /></svg>}
+              {index === 1 && <svg viewBox="0 0 24 24" role="img"><circle cx="12" cy="12" r="4.6" /><path d="M3 12h18M12 3c2.3 2.4 3.5 5.4 3.5 9S14.3 18.6 12 21M12 3c-2.3 2.4-3.5 5.4-3.5 9s1.2 6.6 3.5 9" /><path d="M2.5 8.2c4.8-4 12.4-4.4 18.8-.5" /><path d="m18.8 5.4 2.5 2.3-3.3.3" /></svg>}
+              {index === 2 && <svg viewBox="0 0 24 24" role="img"><rect x="8" y="8" width="8" height="8" rx="1" /><path d="M5 9H2v6h3M19 9h3v6h-3M10 5V2h4v3M10 19v3h4v-3M10.5 11h3M10.5 13h3" /><path d="M5 12h3M16 12h3" /></svg>}
+              {index === 3 && <svg viewBox="0 0 24 24" role="img"><path d="M4 18V9M8 18v-5M12 18V6M16 18v-8M20 18V3" /><path d="M3 18h18M3 21h18" /><circle cx="12" cy="12" r="3.6" /><path d="M8.6 12h6.8M12 8.4c1.2 1 1.8 2.2 1.8 3.6S13.2 14.6 12 15.6M12 8.4c-1.2 1-1.8 2.2-1.8 3.6s.6 2.6 1.8 3.6" /></svg>}
+            </div>
+            <h3>{approach.title}</h3>
+            <p class="approach-card__catch">{approach.catchphrase}</p>
+            <p class="approach-card__description">{approach.emphasis}</p>
+          </a>
+        ))}
+      </div>
+      <div class="approach-flow" aria-label="The four approaches connected as a cycle">
+        <p class="approach-flow__label">CONNECTING THE FOUR APPROACHES</p>
+        <div class="approach-flow__steps">
+          {approachesEn.map((approach, index) => (
+            <a class="approach-flow__step" href={`/en/approach/${approach.slug}/`}>
+              <span>{approach.keyword}</span>
+              <strong>{['Create questions', 'Connect to space', 'Enable experiments', 'Turn into value'][index]}</strong>
+              {index < approachesEn.length - 1 && <i aria-hidden="true">→</i>}
+            </a>
+          ))}
+        </div>
+        <p class="approach-flow__result">New research themes and industries</p>
+        <p class="approach-flow__tagline">Discover engineering in space. Build industry on Earth.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-section" id="news" aria-labelledby="news-title">
+    <div class="content-inner">
+      <div class="section-heading-row">
+        <div><p class="eyebrow">LATEST UPDATES</p><h2 class="section-title" id="news-title">NEWS</h2></div>
+        <a class="text-link" href="/en/news/">VIEW ALL <span>↗</span></a>
+      </div>
+      {visibleNews.length > 0 ? (
+        <div class="news-grid">
+          {visibleNews.map((post) => {
+            const translation = getEnglishNews(post);
+            return <article class="news-card"><a href={`/en/news/${post.id}/`}><div class="news-card__image-wrap"><img src={post.data.heroImage} alt="" class="news-card__image" loading="lazy" /></div><div class="news-card__meta"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US')}</time>{translation.tags[0] && <span>{translation.tags[0]}</span>}</div><h3>{translation.title}</h3><p>{translation.description}</p></a></article>;
+          })}
+        </div>
+      ) : <p class="empty-state">News is coming soon.</p>}
+    </div>
+  </section>
+
+  <section class="partner section-gray" id="partner" aria-labelledby="partner-title">
+    <div class="content-inner">
+      <p class="eyebrow">OUR PARTNERS</p><h2 class="section-title" id="partner-title">PARTNER</h2>
+      <p class="partner__lead">Let us build the future of space together.</p>
+      <div class="partner-note"><p>LVNS SPACE PROJECT is looking for partners who want to take on new challenges from a starting point in space.</p><a class="text-link" href="mailto:space@lne.st">PARTNER WITH US <span>↗</span></a></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact__overlay"></div>
+    <div class="content-inner contact__inner"><p class="eyebrow eyebrow--light">GET IN TOUCH</p><h2 class="section-title section-title--light" id="contact-title">CONTACT</h2><p>Contact us</p><a class="contact__button" href="mailto:space@lne.st">space@lne.st <span>↗</span></a></div>
+  </section>
+</BaseLayout>
