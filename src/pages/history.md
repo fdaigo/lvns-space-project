@@ -174,10 +174,6 @@ description: LVNS SPACE PROJECTの活動の歩み
             <img src="https://d2xlcgjnpyakn4.cloudfront.net/wp-content/uploads/2026/05/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_0326_NoBG_1x1.png" alt="ispaceの月着陸船" loading="lazy" />
             <figcaption>写真：ispace公式サイト</figcaption>
           </figure>
-          <figure class="history-entry-media__logo">
-            <div class="history-company-logo history-company-logo--ispace" role="img" aria-label="ispace logo">ispace</div>
-            <figcaption>ロゴ：ispace公式サイト</figcaption>
-          </figure>
         </div>
       </td>
     </tr>
@@ -191,10 +187,6 @@ description: LVNS SPACE PROJECTの活動の歩み
           <figure>
             <img src="https://i-qps.net/wp-content/uploads/2023/09/QPS-SAR-Constellatoion-image.png" alt="QPS研究所の小型SAR衛星コンステレーション" loading="lazy" />
             <figcaption>写真：QPS研究所公式サイト（提供：QPS研究所）</figcaption>
-          </figure>
-          <figure class="history-entry-media__logo">
-            <div class="history-company-logo history-company-logo--iqps" role="img" aria-label="iQPS logo">iQPS</div>
-            <figcaption>ロゴ：QPS研究所公式サイト</figcaption>
           </figure>
         </div>
       </td>
@@ -225,10 +217,6 @@ description: LVNS SPACE PROJECTの活動の歩み
           <figure>
             <img src="https://www.axelspacehd.com/wordpress/wp-content/uploads/2025/08/0813-AxelspaceHD-1024x552.jpg" alt="アクセルスペースホールディングスの衛星" loading="lazy" />
             <figcaption>写真：アクセルスペースHD公式サイト</figcaption>
-          </figure>
-          <figure class="history-entry-media__logo">
-            <div class="history-company-logo history-company-logo--axelspace" role="img" aria-label="AXELSPACE logo">AXELSPACE</div>
-            <figcaption>ロゴ：アクセルスペースHD公式サイト</figcaption>
           </figure>
         </div>
       </td>
