@@ -164,6 +164,42 @@ description: LVNS SPACE PROJECTの活動の歩み
       </td>
     </tr>
     <tr>
+      <th scope="row">2023年4月12日</th>
+      <td>
+        <p><strong>UntroD Capital Japan出資先の株式会社ispaceが、東京証券取引所グロース市場へ上場。</strong></p>
+        <p>月面開発に取り組むispaceが上場。宇宙スタートアップの事業化と、地球と月の間に経済圏を構築する挑戦が、公開市場で新たな段階へ進みました。</p>
+        <p><a href="https://www.ispace-inc.com/ja/2023/04/12/%E6%9D%B1%E4%BA%AC%E8%A8%BC%E5%88%B8%E5%8F%96%E5%BC%95%E6%89%80%E3%82%B0%E3%83%AD%E3%83%BC%E3%82%B9%E5%B8%82%E5%A0%B4%E3%81%B8%E3%81%AE%E4%B8%8A%E5%A0%B4%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" target="_blank" rel="noreferrer">ispace 上場のお知らせ</a></p>
+        <div class="history-entry-media">
+          <figure>
+            <img src="https://d2xlcgjnpyakn4.cloudfront.net/wp-content/uploads/2026/05/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_0326_NoBG_1x1.png" alt="ispaceの月着陸船" loading="lazy" />
+            <figcaption>写真：ispace公式サイト</figcaption>
+          </figure>
+          <figure class="history-entry-media__logo">
+            <div class="history-company-logo history-company-logo--ispace" role="img" aria-label="ispace logo">ispace</div>
+            <figcaption>ロゴ：ispace公式サイト</figcaption>
+          </figure>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2023年12月6日</th>
+      <td>
+        <p><strong>UntroD Capital Japan出資先の株式会社QPS研究所が、東京証券取引所グロース市場へ上場。</strong></p>
+        <p>小型SAR衛星コンステレーションによる準リアルタイムの地球観測を目指すQPS研究所が上場。宇宙から得られるデータを社会へ届ける事業基盤が広がりました。</p>
+        <p><a href="https://i-qps.net/news/1532/" target="_blank" rel="noreferrer">QPS研究所 上場のお知らせ</a></p>
+        <div class="history-entry-media">
+          <figure>
+            <img src="https://i-qps.net/wp-content/uploads/2023/09/QPS-SAR-Constellatoion-image.png" alt="QPS研究所の小型SAR衛星コンステレーション" loading="lazy" />
+            <figcaption>写真：QPS研究所公式サイト（提供：QPS研究所）</figcaption>
+          </figure>
+          <figure class="history-entry-media__logo">
+            <div class="history-company-logo history-company-logo--iqps" role="img" aria-label="iQPS logo">iQPS</div>
+            <figcaption>ロゴ：QPS研究所公式サイト</figcaption>
+          </figure>
+        </div>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">2024年9月</th>
       <td>
         <p>超異分野学会2024大阪・関西大会で宇宙をテーマにしたパネルディスカッションを実施。</p>
@@ -177,6 +213,24 @@ description: LVNS SPACE PROJECTの活動の歩み
         <p>高知学芸中学高等学校にて「宇宙エレベーター」をテーマとした実験教室を実施。</p>
         <p><a href="https://lne.st/2024/11/28/kochi-gakugei2024/" target="_blank" rel="noreferrer">実施報告</a></p>
         <p><img src="https://space.lne.st/wp-content/uploads/sites/90/2026/06/12abefbe112b34a8a5b3acb8850077ff.png" alt="高知学芸中学高等学校での実験教室" loading="lazy" /></p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2025年8月13日</th>
+      <td>
+        <p><strong>UntroD Capital Japan出資先の株式会社アクセルスペースホールディングスが、東京証券取引所グロース市場へ上場。</strong></p>
+        <p>小型衛星の開発・運用サービスと地球観測データを提供するアクセルスペースHDが上場。宇宙をより身近にする事業の成長が、新しい段階へ進みました。</p>
+        <p><a href="https://www.axelspacehd.com/ja/listing_tse/" target="_blank" rel="noreferrer">アクセルスペースHD 上場のお知らせ</a></p>
+        <div class="history-entry-media">
+          <figure>
+            <img src="https://www.axelspacehd.com/wordpress/wp-content/uploads/2025/08/0813-AxelspaceHD-1024x552.jpg" alt="アクセルスペースホールディングスの衛星" loading="lazy" />
+            <figcaption>写真：アクセルスペースHD公式サイト</figcaption>
+          </figure>
+          <figure class="history-entry-media__logo">
+            <div class="history-company-logo history-company-logo--axelspace" role="img" aria-label="AXELSPACE logo">AXELSPACE</div>
+            <figcaption>ロゴ：アクセルスペースHD公式サイト</figcaption>
+          </figure>
+        </div>
       </td>
     </tr>
     <tr>
