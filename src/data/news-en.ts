@@ -18,15 +18,6 @@ export const newsEn: Record<string, EnglishNews> = {
       'From creating research questions to accessing space experiments, building experimental platforms, and turning discoveries into value, LVNS SPACE PROJECT will develop the full research and development process. Activities and updates will be shared on this website.',
     ],
   },
-  'sample-news-1': {
-    title: 'LVNS SPACE PROJECT launches',
-    description: 'A new project begins to transform humanity’s perspective from a starting point in space.',
-    tags: ['Project', 'News'],
-    paragraphs: [
-      'LVNS SPACE PROJECT is a project that transforms humanity’s perspective from a starting point in space and builds a platform for the next generation of challenges.',
-      'Researchers, companies, governments, educational institutions, and young people who will shape the future come together across disciplines to think about the future of space and Earth. We will continue to share our activities and the results of collaboration.',
-    ],
-  },
 };
 
 export function getEnglishNews(post: { id: string; data: { title: string; description: string; tags: string[] } }): EnglishNews {
