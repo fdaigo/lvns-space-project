@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import ApproachIcon from '../components/ApproachIcon.astro';
 import ApproachOverview from '../components/ApproachOverview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -151,10 +150,6 @@ const approachCards = [
               <div class="partner-card__body">
                 <p class="partner-card__role">OPERATING PARTNER</p>
                 <h4>株式会社IDDK</h4>
-                <div class="partner-approaches" aria-label="株式会社IDDKが担当するアプローチ">
-                  <a class="partner-approach" href="/approach/access/"><ApproachIcon type="access" /><span><small>02 / ACCESS</small><strong>実験アクセス基盤構築</strong></span></a>
-                  <a class="partner-approach" href="/approach/experiment/"><ApproachIcon type="experiment" /><span><small>03 / EXPERIMENT</small><strong>宇宙機器開発</strong></span></a>
-                </div>
               </div>
             </article>
             <article class="partner-card">
@@ -162,10 +157,6 @@ const approachCards = [
               <div class="partner-card__body">
                 <p class="partner-card__role">OPERATING PARTNER</p>
                 <h4>株式会社スペースノーム研究所</h4>
-                <div class="partner-approaches" aria-label="株式会社スペースノーム研究所が担当するアプローチ">
-                  <a class="partner-approach" href="/approach/question/"><ApproachIcon type="question" /><span><small>01 / QUESTION</small><strong>研究テーマ創出</strong></span></a>
-                  <a class="partner-approach" href="/approach/value/"><ApproachIcon type="value" /><span><small>04 / VALUE</small><strong>価値基準創出</strong></span></a>
-                </div>
               </div>
             </article>
           </div>
@@ -176,16 +167,10 @@ const approachCards = [
             <h3 id="development-partners-title">開発パートナー</h3>
           </div>
           <div class="partner-grid partner-grid--single">
-            <article class="partner-card">
-              <div class="partner-card__logo"><img src="/images/partners/hasetora-spinning.png" alt="長谷虎紡績株式会社" loading="lazy" /></div>
-              <div class="partner-card__body">
-                <p class="partner-card__role">DEVELOPMENT PARTNER</p>
-                <h4>長谷虎紡績株式会社</h4>
-                <div class="partner-approaches" aria-label="長谷虎紡績株式会社が担当するアプローチ">
-                  <a class="partner-approach" href="/approach/experiment/"><ApproachIcon type="experiment" /><span><small>03 / EXPERIMENT</small><strong>宇宙機器開発</strong></span></a>
-                </div>
-              </div>
-            </article>
+            <div class="partner-coming-soon">
+              <span>DEVELOPMENT PARTNER</span>
+              <strong>Coming soon</strong>
+            </div>
           </div>
         </section>
       </div>
