@@ -47,7 +47,7 @@ export const approachExplanations: Record<string, ApproachExplanation> = {
     inputItems: ['研究目的', '必要な宇宙環境', '実験期間', '搭載・試料条件', '回収・操作の必要性'],
     stages: [
       { number: '01', title: '研究要件を整理する', description: '研究として何が必要かを定義し、宇宙環境に求める条件へ変換します。', outputs: ['研究要件', '実験条件の優先順位'] },
-      { number: '02', title: '実験機会を調査する', description: '有人宇宙環境、無人回収型衛星、短期・長期の軌道上実験などを候補化します。', outputs: ['候補となる実験機会', '搭載・運用条件'] },
+      { number: '02', title: '実験機会を調査する', description: 'ISSなどの軌道上実験をはじめ、短期・長期の実験機会を候補化します。', outputs: ['候補となる実験機会', '搭載・運用条件'] },
       { number: '03', title: '比較・評価する', description: '科学的適合性、技術的成立性、実施時期、回収や運用の条件を横並びで評価します。', outputs: ['比較結果', '推奨アクセス方法'] },
       { number: '04', title: '実施計画に落とし込む', description: '選定した機会で何を、いつ、どのように実施するかを具体的な計画にします。', outputs: ['宇宙実験アクセス計画', '次の実施アクション'] },
     ],
