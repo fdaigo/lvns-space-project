@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import ApproachIcon from '../../components/ApproachIcon.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { approachesEn } from '../../data/approaches-en';
 import { getEnglishNews } from '../../data/news-en';
@@ -113,6 +114,63 @@ const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
     <div class="content-inner">
       <p class="eyebrow">OUR PARTNERS</p><h2 class="section-title" id="partner-title">PARTNER</h2>
       <p class="partner__lead">Let us build the future of space together.</p>
+      <div class="partner-groups">
+        <section class="partner-group" aria-labelledby="operating-partners-title">
+          <div class="partner-group__heading">
+            <p class="partner-group__eyebrow">OPERATING PARTNERS</p>
+            <h3 id="operating-partners-title">Operating Partners</h3>
+          </div>
+          <div class="partner-grid">
+            <article class="partner-card">
+              <div class="partner-card__logo partner-card__logo--iddk"><img src="/images/partners/iddk.jpg" alt="IDDK Co., Ltd." loading="lazy" /></div>
+              <div class="partner-card__body">
+                <p class="partner-card__role">OPERATING PARTNER</p>
+                <h4>IDDK Co., Ltd.</h4>
+                <div class="partner-approaches" aria-label="Approaches led by IDDK Co., Ltd.">
+                  <a class="partner-approach" href="/en/approach/access/"><ApproachIcon type="access" /><span><small>02 / ACCESS</small><strong>Experiment Access Platform Development</strong></span></a>
+                  <a class="partner-approach" href="/en/approach/experiment/"><ApproachIcon type="experiment" /><span><small>03 / EXPERIMENT</small><strong>Space Equipment Development</strong></span></a>
+                </div>
+              </div>
+            </article>
+            <article class="partner-card">
+              <div class="partner-card__logo"><img src="/images/partners/space-nome-lab.png" alt="Space Nome Research Institute Co., Ltd." loading="lazy" /></div>
+              <div class="partner-card__body">
+                <p class="partner-card__role">OPERATING PARTNER</p>
+                <h4>Space Nome Research Institute Co., Ltd.</h4>
+                <div class="partner-approaches" aria-label="Approaches led by Space Nome Research Institute Co., Ltd.">
+                  <a class="partner-approach" href="/en/approach/question/"><ApproachIcon type="question" /><span><small>01 / QUESTION</small><strong>Creating Research Questions</strong></span></a>
+                  <a class="partner-approach" href="/en/approach/value/"><ApproachIcon type="value" /><span><small>04 / VALUE</small><strong>Creating New Value Standards</strong></span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="partner-group" aria-labelledby="development-partners-title">
+          <div class="partner-group__heading">
+            <p class="partner-group__eyebrow">DEVELOPMENT PARTNER</p>
+            <h3 id="development-partners-title">Development Partner</h3>
+          </div>
+          <div class="partner-grid partner-grid--single">
+            <article class="partner-card">
+              <div class="partner-card__logo"><img src="/images/partners/hasetora-spinning.png" alt="Hasetora Spinning Co., Ltd." loading="lazy" /></div>
+              <div class="partner-card__body">
+                <p class="partner-card__role">DEVELOPMENT PARTNER</p>
+                <h4>Hasetora Spinning Co., Ltd.</h4>
+                <div class="partner-approaches" aria-label="Approaches supported by Hasetora Spinning Co., Ltd.">
+                  <a class="partner-approach" href="/en/approach/experiment/"><ApproachIcon type="experiment" /><span><small>03 / EXPERIMENT</small><strong>Space Equipment Development</strong></span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+      <div class="partner-organizer">
+        <div class="partner-organizer__logo"><img src="/images/partners/leave-a-nest.png" alt="Leave a Nest" loading="lazy" /></div>
+        <div>
+          <p class="partner-card__role">ORGANIZER</p>
+          <h3>Leave a Nest Co., Ltd.</h3>
+        </div>
+      </div>
       <div class="partner-note"><p>LVNS SPACE PROJECT is looking for partners who want to take on new challenges from a starting point in space.</p><a class="text-link" href="mailto:ask@space.lne.st">PARTNER WITH US <span>↗</span></a></div>
     </div>
   </section>
