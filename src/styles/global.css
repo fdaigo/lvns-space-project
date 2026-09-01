@@ -849,3 +849,8 @@ button { font: inherit; }
 .history-table td { border-color: #d8d9eb; box-shadow: 0 12px 28px rgba(23,28,97,.07); }
 .history-table tr:hover td { box-shadow: 0 17px 34px rgba(23,28,97,.13); }
 .history-table a { text-decoration-color: #b4b1d5; }
+
+
+/* Match the hero title and language tab to the new brand purple. */
+.hero__title-panel h1 { color: var(--purple); }
+.language-tab { background: var(--purple); }
