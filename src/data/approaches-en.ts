@@ -32,7 +32,7 @@ export const approachesEn: ApproachPage[] = [
     catchphrase: 'Design the best way for each research project to reach space.',
     lead: [
       'There is no single way to conduct an experiment in space.',
-      'Beyond the ISS, researchers can access commercial space stations, uncrewed recoverable satellites, short-duration opportunities, and long-duration orbital experiments.',
+      'Researchers can access orbital experiments such as the ISS, along with a growing range of short- and long-duration opportunities.',
       'The important question is not how to go to space, but how to',
     ],
     emphasis: 'choose the space environment that best fits the research objective.',
