@@ -1,16 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
 import ApproachIcon from '../components/ApproachIcon.astro';
+import ApproachOverview from '../components/ApproachOverview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
-const approaches = [
+const approachCards = [
   {
     slug: 'question',
     number: '01',
+    icon: 'question' as const,
     name: '研究テーマ創出',
     catchphrase: '宇宙だからこそ挑戦する「問い」をつくる。',
     description: '企業と研究者をつなぎ、宇宙を使うからこそ生まれる新しい問いをつくります。',
@@ -19,6 +21,7 @@ const approaches = [
   {
     slug: 'access',
     number: '02',
+    icon: 'access' as const,
     name: '実験アクセス基盤構築',
     catchphrase: '研究に最適な「宇宙への行き方」をつくる。',
     description: '研究目的に合わせて、最適な宇宙実験機会を設計し、宇宙を使える状態をつくります。',
@@ -27,6 +30,7 @@ const approaches = [
   {
     slug: 'experiment',
     number: '03',
+    icon: 'experiment' as const,
     name: '宇宙機器開発',
     catchphrase: '宇宙で「できる実験」を増やす。',
     description: '装置や実験方法を宇宙環境へ対応させ、宇宙でできる研究の種類を増やします。',
@@ -35,6 +39,7 @@ const approaches = [
   {
     slug: 'value',
     number: '04',
+    icon: 'value' as const,
     name: '価値基準創出',
     catchphrase: '宇宙から、新しい「価値のものさし」をつくる。',
     description: '宇宙の発見から評価方法や基準をつくり、地球の新しい価値へ変換します。',
@@ -77,78 +82,24 @@ const approaches = [
     </div>
   </section>
 
-  <section class="approach section-black" id="approach" aria-labelledby="approach-title">
-    <div class="content-inner">
-      <p class="eyebrow eyebrow--light">WHAT WE DO</p>
-      <h2 class="section-title section-title--light" id="approach-title">APPROACH</h2>
-      <p class="approach__subtitle">宇宙を研究開発のフィールドにする、4つのアプローチ</p>
-      <div class="approach__intro">
-        <p>LVNS SPACE PROJECTは、宇宙へ実験を持っていくだけのプロジェクトではありません。</p>
-        <p>研究テーマを生み出し、宇宙へアクセスする方法をつくり、実験できる環境を整え、そこで得られた成果を新しい価値へ変えていく。</p>
-        <p><strong>「宇宙を使って、延長線上にない工学を発見する」ために、4つのアプローチから研究開発の仕組みそのものをつくります。</strong></p>
-      </div>
-      <div class="approach-grid">
-        {approaches.map((approach, index) => (
-          <a class="approach-card" href={`/approach/${approach.slug}/`}>
-            <div class="approach-card__topline">
-              <p class="approach-card__number">{approach.number}</p>
-              <span class="approach-card__flow">{approach.flow}</span>
-            </div>
-            <div class="approach-card__icon" aria-hidden="true">
-              {index === 0 && (
-                <svg viewBox="0 0 24 24" role="img">
-                  <path d="M10 2v5.2l-4.6 7.2A3 3 0 0 0 7.9 19h8.2a3 3 0 0 0 2.5-4.6L14 7.2V2" />
-                  <path d="M8 10h8M10 2h4" />
-                  <path d="M18.5 4.2c0-1.1.8-2 1.9-2s1.9.7 1.9 1.7c0 1.3-1.9 1.5-1.9 2.8" />
-                  <circle cx="20.4" cy="8.5" r=".5" fill="currentColor" stroke="none" />
-                </svg>
-              )}
-              {index === 1 && (
-                <svg viewBox="0 0 24 24" role="img">
-                  <circle cx="12" cy="12" r="4.6" />
-                  <path d="M3 12h18M12 3c2.3 2.4 3.5 5.4 3.5 9S14.3 18.6 12 21M12 3c-2.3 2.4-3.5 5.4-3.5 9s1.2 6.6 3.5 9" />
-                  <path d="M2.5 8.2c4.8-4 12.4-4.4 18.8-.5" />
-                  <path d="m18.8 5.4 2.5 2.3-3.3.3" />
-                </svg>
-              )}
-              {index === 2 && (
-                <svg viewBox="0 0 24 24" role="img">
-                  <rect x="8" y="8" width="8" height="8" rx="1" />
-                  <path d="M5 9H2v6h3M19 9h3v6h-3M10 5V2h4v3M10 19v3h4v-3M10.5 11h3M10.5 13h3" />
-                  <path d="M5 12h3M16 12h3" />
-                </svg>
-              )}
-              {index === 3 && (
-                <svg viewBox="0 0 24 24" role="img">
-                  <path d="M4 18V9M8 18v-5M12 18V6M16 18v-8M20 18V3" />
-                  <path d="M3 18h18M3 21h18" />
-                  <circle cx="12" cy="12" r="3.6" />
-                  <path d="M8.6 12h6.8M12 8.4c1.2 1 1.8 2.2 1.8 3.6S13.2 14.6 12 15.6M12 8.4c-1.2 1-1.8 2.2-1.8 3.6s.6 2.6 1.8 3.6" />
-                </svg>
-              )}
-            </div>
-            <h3>{approach.name}</h3>
-            <p class="approach-card__catch">{approach.catchphrase}</p>
-            <p class="approach-card__description">{approach.description}</p>
-          </a>
-        ))}
-      </div>
-      <div class="approach-flow" aria-label="4つのアプローチをつなぐ循環">
-        <p class="approach-flow__label">4つのアプローチをつなぐ</p>
-        <div class="approach-flow__steps">
-          {approaches.map((approach, index) => (
-            <a class="approach-flow__step" href={`/approach/${approach.slug}/`}>
-              <span>{approach.flow}</span>
-              <strong>{['問いをつくる', '宇宙へつなぐ', '実験できるようにする', '価値に変える'][index]}</strong>
-              {index < approaches.length - 1 && <i aria-hidden="true">→</i>}
-            </a>
-          ))}
-        </div>
-        <p class="approach-flow__result">新しい研究テーマ・産業へ</p>
-        <p class="approach-flow__tagline">宇宙で工学を発見し、地球で工業にする。</p>
-      </div>
-    </div>
-  </section>
+  <ApproachOverview
+    locale="ja"
+    sectionLabel="WHAT WE DO"
+    title="APPROACH"
+    subtitle="宇宙を研究開発のフィールドにする、4つのアプローチ"
+    intro={[
+      'LVNS SPACE PROJECTは、宇宙へ実験を持っていくだけのプロジェクトではありません。',
+      '研究テーマを生み出し、宇宙へアクセスする方法をつくり、実験できる環境を整え、そこで得られた成果を新しい価値へ変えていく。',
+    ]}
+    emphasis="「宇宙を使って、延長線上にない工学を発見する」ために、4つのアプローチから研究開発の仕組みそのものをつくります。"
+    cards={approachCards}
+    missionTitle={['宇宙に', '研究所をつくる']}
+    missionLead={['研究開発の選択肢に、', '宇宙を加える。']}
+    flowLabel="4つのアプローチをつなぐ"
+    flowLabels={['問いをつくる', '宇宙へつなぐ', '実験できるようにする', '価値に変える']}
+    flowResult="新しい研究テーマ・産業へ"
+    tagline="宇宙で工学を発見し、地球で工業にする。"
+  />
 
   <section class="news-section" id="news" aria-labelledby="news-title">
     <div class="content-inner">
