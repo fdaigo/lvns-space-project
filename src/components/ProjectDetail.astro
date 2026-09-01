@@ -1,0 +1,80 @@
+---
+import type { ProjectPage } from '../data/projects';
+
+type Props = {
+  project: ProjectPage;
+  locale?: 'ja' | 'en';
+};
+
+const { project, locale = 'ja' } = Astro.props;
+const isEnglish = locale === 'en';
+const backHref = isEnglish ? '/en/#project' : '/#project';
+const backLabel = isEnglish ? '← ALL PROJECTS' : '← PROJECTS一覧';
+const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
+---
+
+<main class="project-detail">
+  <section class="project-detail__hero section-gray" aria-labelledby="project-detail-title">
+    <div class="content-inner project-detail__hero-inner">
+      <div class="project-detail__copy">
+        <a class="back-link" href={backHref}>{backLabel}</a>
+        <p class="project-detail__index">PROJECT <span>/</span> 01</p>
+        <h1 id="project-detail-title">{project.name}</h1>
+        <p class="project-detail__english-name">{project.englishName}</p>
+        <h2>{project.catchphrase}</h2>
+        <p class="project-detail__summary">{project.summary}</p>
+      </div>
+      <figure class="project-detail__visual">
+        <img src={project.image} alt={project.imageAlt} loading="eager" />
+        <figcaption>{project.eyebrow}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="project-detail__steps" aria-labelledby="project-steps-title">
+    <div class="content-inner">
+      <p class="eyebrow">{isEnglish ? 'WHAT WE WILL DO' : 'WHAT WE DO'}</p>
+      <h2 class="section-title" id="project-steps-title">{project.stepsTitle}</h2>
+      <div class="project-step-list">
+        {project.steps.map((step) => (
+          <article class="project-step">
+            <div class="project-step__number">{step.number}</div>
+            <div class="project-step__copy">
+              <h3>{step.title}</h3>
+              <p class="project-step__lead">{step.lead}</p>
+              <p>{step.body}</p>
+            </div>
+            <ul class="project-step__points">
+              {step.points.map((point) => <li>{point}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="project-detail__team section-gray" aria-labelledby="project-team-title">
+    <div class="content-inner">
+      <p class="eyebrow">PROJECT TEAM</p>
+      <h2 class="section-title" id="project-team-title">{isEnglish ? 'The team behind the project' : 'プロジェクトチーム'}</h2>
+      <p class="project-detail__team-intro">{project.teamIntro}</p>
+      <div class="project-team-grid">
+        {project.team.map((member) => (
+          <article class="project-team-card">
+            <p class="project-team-card__role">{member.role}</p>
+            <h3>{member.name}</h3>
+            <p>{member.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="project-detail__closing" aria-label={isEnglish ? 'Project closing message' : 'プロジェクトメッセージ'}>
+    <div class="content-inner">
+      <p>{project.closing}</p>
+      <a class="project-detail__source" href={project.sourceUrl} target="_blank" rel="noreferrer">{sourceLabel} <span>↗</span></a>
+      <a class="project-detail__back" href={backHref}>{isEnglish ? 'BACK TO PROJECTS' : 'PROJECTSへ戻る'} <span>↗</span></a>
+    </div>
+  </section>
+</main>
