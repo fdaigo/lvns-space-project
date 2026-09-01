@@ -497,3 +497,11 @@ button { font: inherit; }
   .approach-node__catch { font-size: 12px; }
   .approach-node__description { font-size: 11px; }
 }
+
+/* Center the partner labels and keep the development slot ready for a future announcement. */
+.partner-group__heading { justify-content: center; text-align: center; }
+.partner-card__body { text-align: center; }
+.partner-grid--single { width: min(520px, 100%); margin: 0 auto; grid-template-columns: 1fr; }
+.partner-coming-soon { display: grid; min-height: 180px; place-items: center; align-content: center; gap: 12px; padding: 28px; border: 1px solid #d8d9eb; background: rgba(255,255,255,.72); box-shadow: 0 12px 28px rgba(23, 28, 97, .05); text-align: center; }
+.partner-coming-soon span { color: var(--purple); font-family: 'Open Sans', sans-serif; font-size: 11px; font-style: italic; font-weight: 600; letter-spacing: .16em; }
+.partner-coming-soon strong { color: var(--blue-dark); font-family: 'Jost', sans-serif; font-size: 31px; font-style: italic; font-weight: 500; line-height: 1.2; }
