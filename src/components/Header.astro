@@ -7,6 +7,7 @@ const languagePath = getLocalizedPath(Astro.url.pathname, isEnglish ? 'ja' : 'en
 const hasPageLanguageTab = ['/', '/en/', '/history/', '/en/history/'].includes(Astro.url.pathname);
 const navigation = isEnglish
   ? [
+      { href: '/en/#project', label: 'PROJECT' },
       { href: '/en/#news', label: 'NEWS' },
       { href: '/en/about/', label: 'ABOUT' },
       { href: '/en/history/', label: 'HISTORY' },
@@ -15,6 +16,7 @@ const navigation = isEnglish
       { href: '/en/#contact', label: 'CONTACT' },
     ]
   : [
+      { href: '/#project', label: 'PROJECT' },
       { href: '/#news', label: 'NEWS' },
       { href: '/about/', label: 'ABOUT' },
       { href: '/history/', label: 'HISTORY' },
