@@ -804,3 +804,48 @@ button { font: inherit; }
   .history-table tbody th { padding: 0; font-size: 16px; text-align: left; }
   .history-table td { padding: 22px 20px 20px; border-left-width: 3px; border-radius: 2px 13px 13px 2px; }
 }
+
+
+/* LVNS SPACE PROJECT brand palette */
+:root {
+  --blue: #172a88;
+  --blue-dark: #171c61;
+  --purple: #601986;
+  --lavender: #a59eca;
+  --black: #171c61;
+  --ink: #282a59;
+  --gray: #f0f0f7;
+  --line: #d8d9eb;
+}
+
+.eyebrow--light { color: var(--lavender); }
+.about { background: #f7f7fc; }
+.about-copy__closing, .about-bridge { border-color: #d9d7ed; }
+.about-illustration__grid { color: var(--lavender); stroke: #d9d7ed; }
+.about-illustration__frame { stroke: #c7c8e5; }
+.about-illustration__conditions text:nth-child(2), .about-illustration__research text, .about-illustration__lab text:last-of-type { fill: #62679e; }
+.about-illustration__conditions--space { color: var(--purple); }
+.about-illustration__earth, .about-illustration__lab { fill: rgba(23,42,136,.08); }
+.about-illustration__research { stroke: #59619c; }
+.about-illustration__orbit--secondary { stroke: #c0bee3; }
+.about-illustration__change text:last-of-type { fill: #62679e; }
+.about-illustration__flow-label { fill: #6f74aa !important; }
+.approach-card { border-color: rgba(165,158,202,.38); }
+.approach-card:hover { border-color: var(--lavender); background: linear-gradient(155deg, rgba(23,42,136,.24), rgba(255,255,255,.03)); }
+.approach-card__flow, .approach-card__icon, .approach-flow__label { color: var(--lavender); }
+.approach-flow__result { color: #d8d4ef; border-color: rgba(165,158,202,.62); }
+.approach-detail__index span { color: #9a9cc4; }
+.approach-detail__visual img { border-color: #d9d9ed; box-shadow: 0 18px 45px rgba(23,28,97,.09); }
+.approach-detail__visual figcaption { color: #686da0; }
+.approach-process__item { border-top-color: #c7c9e6; border-bottom-color: #c7c9e6; background: #fafaff; }
+.approach-process__item:not(:last-child)::after { background: #fafaff; }
+.approach-process__item + .approach-process__item { border-left-color: #dfe0f1; }
+.approach-examples li { border-color: #d9d9ed; }
+.approach-detail__next { border-color: rgba(165,158,202,.48); background: linear-gradient(140deg, rgba(23,42,136,.18), rgba(255,255,255,.02)); }
+.approach-detail__next span, .approach-detail__model > span, .approach-detail__model a { color: var(--lavender); }
+.news-card__meta span { border-color: #b4b1d5; }
+.history-table tbody::before { background: linear-gradient(var(--blue), #c9c7e6 85%, transparent); }
+.history-table tr::before { box-shadow: 0 0 0 1px #aaa8d2, 0 0 0 7px rgba(23,42,136,.1); }
+.history-table td { border-color: #d8d9eb; box-shadow: 0 12px 28px rgba(23,28,97,.07); }
+.history-table tr:hover td { box-shadow: 0 17px 34px rgba(23,28,97,.13); }
+.history-table a { text-decoration-color: #b4b1d5; }
