@@ -29,7 +29,7 @@ export const approachExplanationsEn: Record<string, ApproachExplanation> = {
     inputItems: ['Research objective', 'Required space environment', 'Experiment duration', 'Payload and sample conditions', 'Recovery or crew-operation needs'],
     stages: [
       { number: '01', title: 'Define research requirements', description: 'We clarify what the research needs and translate it into requirements for the space environment.', outputs: ['Research requirements', 'Priority of experiment conditions'] },
-      { number: '02', title: 'Survey opportunities', description: 'We map crewed space environments, uncrewed recoverable satellites, and short- and long-duration orbital options.', outputs: ['Candidate opportunities', 'Payload and operation conditions'] },
+      { number: '02', title: 'Survey opportunities', description: 'We map orbital experiments such as the ISS, along with short- and long-duration opportunities.', outputs: ['Candidate opportunities', 'Payload and operation conditions'] },
       { number: '03', title: 'Compare and evaluate', description: 'We compare scientific fit, technical feasibility, timing, recovery, and operational conditions side by side.', outputs: ['Comparison result', 'Recommended access method'] },
       { number: '04', title: 'Build the implementation plan', description: 'We specify what will be done, when, and how within the selected opportunity.', outputs: ['Space experiment access plan', 'Next implementation actions'] },
     ],
