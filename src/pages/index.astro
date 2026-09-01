@@ -2,10 +2,12 @@
 import { getCollection } from 'astro:content';
 import ApproachOverview from '../components/ApproachOverview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { projects } from '../data/projects';
 
 const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+const featuredProject = projects[0];
 
 const approachCards = [
   {
@@ -99,6 +101,32 @@ const approachCards = [
     flowResult="新しい研究テーマ・産業へ"
     tagline="宇宙で工学を発見し、地球で工業にする。"
   />
+
+  <section class="project-section section-gray" id="project" aria-labelledby="project-title">
+    <div class="content-inner">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">PROJECT</p>
+          <h2 class="section-title" id="project-title">PROJECT</h2>
+        </div>
+        <a class="text-link" href={`/project/${featuredProject.slug}/`}>VIEW PROJECT <span>↗</span></a>
+      </div>
+      <article class="project-feature">
+        <a class="project-feature__visual" href={`/project/${featuredProject.slug}/`}>
+          <div class="project-feature__image-wrap"><img src={featuredProject.image} alt={featuredProject.imageAlt} loading="lazy" /></div>
+          <span class="project-feature__badge">{featuredProject.eyebrow}</span>
+        </a>
+        <div class="project-feature__copy">
+          <p class="project-feature__number">PROJECT 01</p>
+          <h3>{featuredProject.name}</h3>
+          <p class="project-feature__english">{featuredProject.englishName}</p>
+          <p class="project-feature__catch">{featuredProject.catchphrase}</p>
+          <p>{featuredProject.summary}</p>
+          <a class="text-link" href={`/project/${featuredProject.slug}/`}>DETAILS <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <section class="news-section" id="news" aria-labelledby="news-title">
     <div class="content-inner">
