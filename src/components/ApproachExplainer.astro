@@ -1,0 +1,70 @@
+---
+import type { ApproachExplanation } from '../data/approach-explanations';
+
+type Props = {
+  explanation: ApproachExplanation;
+};
+
+const { explanation } = Astro.props;
+---
+
+<div class="approach-explainer" aria-label={explanation.title}>
+  <div class="approach-explainer__header">
+    <p class="approach-explainer__kicker">{explanation.kicker}</p>
+    <h2 id="approach-explainer-title">{explanation.title}</h2>
+    <p>{explanation.summary}</p>
+  </div>
+
+  <div class="approach-explainer__map">
+    <div class="approach-explainer__endpoint approach-explainer__endpoint--input">
+      <span class="approach-explainer__label">INPUT</span>
+      <strong>{explanation.inputLabel}</strong>
+      <ul>
+        {explanation.inputItems.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+
+    <div class="approach-explainer__stages" aria-label="Approach stages">
+      {explanation.stages.map((stage, index) => (
+        <article class="approach-explainer__stage">
+          <div class="approach-explainer__stage-topline">
+            <span>{stage.number}</span>
+            {index < explanation.stages.length - 1 && <i aria-hidden="true">↓</i>}
+          </div>
+          <h3>{stage.title}</h3>
+          <p>{stage.description}</p>
+          <div class="approach-explainer__outputs">
+            <span>OUTPUT</span>
+            <ul>
+              {stage.outputs.map((output) => <li>{output}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="approach-explainer__endpoint approach-explainer__endpoint--output">
+      <span class="approach-explainer__label">OUTPUT</span>
+      <strong>{explanation.outputLabel}</strong>
+      <ul>
+        {explanation.outputItems.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="approach-explainer__roles">
+    <div class="approach-explainer__roles-heading">
+      <span>TEAM DESIGN</span>
+      <h3>{explanation.rolesTitle}</h3>
+    </div>
+    <div class="approach-explainer__role-list">
+      {explanation.roles.map((role) => (
+        <div class="approach-explainer__role">
+          <strong>{role.name}</strong>
+          <span>{role.role}</span>
+          <p>{role.detail}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
