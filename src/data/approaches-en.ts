@@ -22,13 +22,13 @@ export const approachesEn: ApproachPage[] = [
     examplesTitle: 'Starting points for questions',
     examples: ['Technical and research challenges', 'Combining with the space environment', 'From hypothesis to research theme'],
     closing: 'We do not search for research themes. We create questions that can only emerge through the use of space.',
-    next: { slug: 'access', number: '02', keyword: 'ACCESS', title: 'Space Experiment Access Platform' },
+    next: { slug: 'access', number: '02', keyword: 'ACCESS', title: 'Experiment Access Platform Development' },
   },
   {
     slug: 'access',
     number: '02',
     keyword: 'ACCESS',
-    title: 'Space Experiment Access Platform',
+    title: 'Experiment Access Platform Development',
     catchphrase: 'Design the best way for each research project to reach space.',
     lead: [
       'There is no single way to conduct an experiment in space.',
@@ -42,13 +42,13 @@ export const approachesEn: ApproachPage[] = [
     examplesTitle: 'What we compare',
     examples: ['Timing', 'Experiment duration', 'Payload size', 'Recovery conditions', 'Cost', 'Launch frequency', 'Risk', 'Alternative opportunities'],
     closing: 'We do not simply choose a way to go to space. We choose the space environment that best fits the research.',
-    next: { slug: 'experiment', number: '03', keyword: 'EXPERIMENT', title: 'Space Experiment Infrastructure' },
+    next: { slug: 'experiment', number: '03', keyword: 'EXPERIMENT', title: 'Space Equipment Development' },
   },
   {
     slug: 'experiment',
     number: '03',
     keyword: 'EXPERIMENT',
-    title: 'Space Experiment Infrastructure',
+    title: 'Space Equipment Development',
     catchphrase: 'Expand what can be experimented on in space.',
     lead: [
       'Having an opportunity to reach space is not enough. Research also needs the right equipment.',
