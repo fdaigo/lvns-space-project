@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ApproachIcon from '../../components/ApproachIcon.astro';
+import ApproachOverview from '../../components/ApproachOverview.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { approachesEn } from '../../data/approaches-en';
 import { getEnglishNews } from '../../data/news-en';
@@ -8,6 +9,16 @@ import { getEnglishNews } from '../../data/news-en';
 const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+
+const approachCards = approachesEn.map((approach) => ({
+  slug: approach.slug,
+  number: approach.number,
+  flow: approach.keyword,
+  icon: approach.slug as 'question' | 'access' | 'experiment' | 'value',
+  name: approach.title,
+  catchphrase: approach.catchphrase,
+  description: approach.emphasis,
+}));
 ---
 
 <BaseLayout
@@ -47,7 +58,26 @@ const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
     </div>
   </section>
 
-  <section class="approach section-black" id="approach" aria-labelledby="approach-title">
+  <ApproachOverview
+    locale="en"
+    sectionLabel="WHAT WE DO"
+    title="APPROACH"
+    subtitle="Four approaches to making space a field for research and development"
+    intro={[
+      'LVNS SPACE PROJECT is not simply a project that takes experiments into space.',
+      'We create research themes, build ways to access space, prepare environments for experiments, and turn the results into new value.',
+    ]}
+    emphasis="To discover engineering beyond the conventional path through the use of space, we build the research and development system itself through four approaches."
+    cards={approachCards}
+    missionTitle={['Build a research', 'institute in space']}
+    missionLead={['Add space to the options', 'for research and development.']}
+    flowLabel="CONNECTING THE FOUR APPROACHES"
+    flowLabels={['Create questions', 'Connect to space', 'Enable experiments', 'Turn into value']}
+    flowResult="New research themes and industries"
+    tagline="Discover engineering in space. Build industry on Earth."
+  />
+
+  <section class="approach approach--legacy section-black" id="approach-legacy" aria-hidden="true">
     <div class="content-inner">
       <p class="eyebrow eyebrow--light">WHAT WE DO</p>
       <h2 class="section-title section-title--light" id="approach-title">APPROACH</h2>
