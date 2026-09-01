@@ -1,0 +1,101 @@
+---
+import ApproachIcon from './ApproachIcon.astro';
+
+type ApproachCard = {
+  slug: string;
+  number: string;
+  flow: string;
+  icon: 'question' | 'access' | 'experiment' | 'value';
+  name: string;
+  catchphrase: string;
+  description: string;
+};
+
+type Props = {
+  locale: 'ja' | 'en';
+  sectionLabel: string;
+  title: string;
+  subtitle: string;
+  intro: string[];
+  emphasis: string;
+  cards: ApproachCard[];
+  missionTitle: string[];
+  missionLead: string[];
+  flowLabel: string;
+  flowLabels: string[];
+  flowResult: string;
+  tagline: string;
+};
+
+const {
+  locale,
+  sectionLabel,
+  title,
+  subtitle,
+  intro,
+  emphasis,
+  cards,
+  missionTitle,
+  missionLead,
+  flowLabel,
+  flowLabels,
+  flowResult,
+  tagline,
+} = Astro.props;
+const approachHref = (slug: string) => `${locale === 'en' ? '/en' : ''}/approach/${slug}/`;
+---
+
+<section class="approach section-gray" id="approach" aria-labelledby="approach-title">
+  <div class="content-inner">
+    <p class="eyebrow">{sectionLabel}</p>
+    <h2 class="section-title" id="approach-title">{title}</h2>
+    <p class="approach__subtitle">{subtitle}</p>
+    <div class="approach__intro">
+      {intro.map((paragraph) => <p>{paragraph}</p>)}
+      <p><strong>{emphasis}</strong></p>
+    </div>
+
+    <div class="approach-overview" aria-label={locale === 'en' ? 'Four approaches around the mission' : 'ミッションを中心とした4つのアプローチ'}>
+      <div class="approach-overview__grid">
+        {cards.map((card) => (
+          <a class={`approach-node approach-node--${card.slug}`} href={approachHref(card.slug)}>
+            <div class="approach-node__topline">
+              <span class="approach-node__number">{card.number}</span>
+              <span class="approach-node__flow">{card.flow}</span>
+            </div>
+            <div class="approach-node__main">
+              <ApproachIcon type={card.icon} variant="overview" />
+              <div class="approach-node__copy">
+                <h3>{card.name}</h3>
+                <p class="approach-node__catch">{card.catchphrase}</p>
+                <p class="approach-node__description">{card.description}</p>
+              </div>
+            </div>
+            <span class="approach-node__arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="approach-overview__mission">
+        <p>MISSION</p>
+        <strong>{missionTitle[0]}<br />{missionTitle[1]}</strong>
+        <span>{missionLead[0]}<br />{missionLead[1]}</span>
+      </div>
+    </div>
+
+    <div class="approach-flow" aria-label={locale === 'en' ? 'The four approaches connected as a cycle' : '4つのアプローチをつなぐ循環'}>
+      <p class="approach-flow__label">{flowLabel}</p>
+      <div class="approach-flow__steps">
+        {cards.map((card, index) => (
+          <a class="approach-flow__step" href={approachHref(card.slug)}>
+            <span>{card.flow}</span>
+            <strong>{flowLabels[index]}</strong>
+            {index < cards.length - 1 && <i aria-hidden="true">→</i>}
+          </a>
+        ))}
+      </div>
+      <p class="approach-flow__result">{flowResult}</p>
+      <p class="approach-flow__tagline">{tagline}</p>
+    </div>
+  </div>
+</section>
