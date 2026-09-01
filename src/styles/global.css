@@ -438,3 +438,62 @@ button { font: inherit; }
   .history-table tbody th { padding: 0; font-size: 16px; text-align: left; }
   .history-table td { padding: 22px 20px 20px; border-left-width: 3px; border-radius: 2px 13px 13px 2px; }
 }
+
+/* Mission-centered approach map. */
+.approach--legacy { display: none; }
+.approach__subtitle { color: var(--blue-dark); }
+.approach__intro { color: var(--muted); }
+.approach__intro strong { color: var(--blue-dark); }
+.approach-overview { position: relative; margin-top: 58px; }
+.approach-overview__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(150px, 18vw, 260px); row-gap: 28px; }
+.approach-node { position: relative; z-index: 1; display: block; min-height: 245px; padding: 25px 28px 27px; border: 1px solid #a9bee3; border-radius: 18px; background: rgba(255,255,255,.94); box-shadow: 0 14px 30px rgba(23, 42, 136, .08); transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+.approach-node--access, .approach-node--value { border-color: #a8d7ca; }
+.approach-node:hover { border-color: var(--blue); box-shadow: 0 20px 38px rgba(23, 42, 136, .14); transform: translateY(-4px); }
+.approach-node--access:hover, .approach-node--value:hover { border-color: #168865; }
+.approach-node::after { position: absolute; top: 50%; width: calc(clamp(150px, 18vw, 260px) / 2); border-top: 2px solid #7aa7e8; content: ''; }
+.approach-node--question::after, .approach-node--experiment::after { right: calc(clamp(150px, 18vw, 260px) / -2); }
+.approach-node--access::after, .approach-node--value::after { left: calc(clamp(150px, 18vw, 260px) / -2); border-color: #75bca8; }
+.approach-node__topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.approach-node__number { display: grid; width: 38px; height: 38px; margin: 0; place-items: center; color: var(--white); border-radius: 50%; background: var(--blue); font-family: 'Open Sans', sans-serif; font-size: 14px; font-style: italic; font-weight: 600; }
+.approach-node--access .approach-node__number, .approach-node--value .approach-node__number { background: #168865; }
+.approach-node__flow { color: var(--blue-dark); font-family: 'Open Sans', sans-serif; font-size: 11px; font-style: italic; font-weight: 600; letter-spacing: .16em; }
+.approach-node--access .approach-node__flow, .approach-node--value .approach-node__flow { color: #168865; }
+.approach-node__main { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 18px; align-items: start; margin-top: 20px; }
+.approach-node__icon { display: grid; width: 72px; height: 72px; place-items: center; color: var(--blue); border: 1px solid #7aa7e8; border-radius: 50%; }
+.approach-node--access .approach-node__icon, .approach-node--value .approach-node__icon { color: #168865; border-color: #75bca8; }
+.approach-node__icon svg { width: 49px; height: 49px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.05; }
+.approach-node__copy h3 { margin: 0; color: var(--blue-dark); font-size: 20px; font-weight: 500; line-height: 1.45; }
+.approach-node__catch { margin: 9px 0 0; color: var(--blue-dark); font-size: 13px; font-weight: 500; line-height: 1.65; }
+.approach-node__description { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.approach-node__arrow { position: absolute; right: 22px; bottom: 17px; color: var(--blue); font-family: 'Jost', sans-serif; font-size: 22px; font-style: italic; line-height: 1; }
+.approach-node--access .approach-node__arrow, .approach-node--value .approach-node__arrow { color: #168865; }
+.approach-overview__mission { position: absolute; z-index: 2; top: 50%; left: 50%; display: grid; width: 220px; aspect-ratio: 1; place-items: center; padding: 25px; border: 2px solid var(--blue); border-radius: 50%; background: rgba(255,255,255,.97); box-shadow: 0 0 0 9px rgba(255,255,255,.82), 0 0 0 10px #9ec2ef, 0 16px 35px rgba(23, 42, 136, .12); text-align: center; transform: translate(-50%, -50%); }
+.approach-overview__mission::before { position: absolute; inset: -17px; border: 1px dashed #a8d7ca; border-radius: 50%; content: ''; }
+.approach-overview__mission p { margin: 0; color: var(--purple); font-family: 'Open Sans', sans-serif; font-size: 10px; font-style: italic; font-weight: 600; letter-spacing: .18em; }
+.approach-overview__mission strong { display: block; margin-top: 10px; color: var(--blue-dark); font-size: 24px; font-weight: 500; line-height: 1.4; }
+.approach-overview__mission span { display: block; margin-top: 9px; color: #59619c; font-size: 11px; line-height: 1.6; }
+.approach-flow { margin-top: 78px; padding-top: 30px; border-top: 1px solid #c7c9e6; text-align: center; }
+.approach-flow__label { color: var(--purple); }
+.approach-flow__steps { gap: 18px; }
+.approach-flow__step { color: var(--blue-dark); border: 1px solid #b7c6e6; background: rgba(255,255,255,.72); transition: border-color .25s ease, transform .25s ease, background .25s ease; }
+.approach-flow__step:hover { border-color: var(--blue); background: var(--white); transform: translateY(-3px); }
+.approach-flow__step span { color: var(--purple); }
+.approach-flow__step strong { color: var(--blue-dark); }
+.approach-flow__step i { color: var(--blue); }
+.approach-flow__result { color: var(--blue-dark); border-color: #aeb9dd; }
+.approach-flow__result::after { color: var(--purple); }
+.approach-flow__tagline { color: var(--blue-dark); }
+
+@media (max-width: 760px) {
+  .approach-overview { display: flex; margin-top: 42px; flex-direction: column; gap: 18px; }
+  .approach-overview__grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .approach-overview__mission { position: relative; top: auto; left: auto; width: 200px; margin: 0 auto 8px; transform: none; }
+  .approach-node { min-height: 0; padding: 22px 20px 26px; }
+  .approach-node::after { display: none; }
+  .approach-node__main { grid-template-columns: 64px minmax(0, 1fr); gap: 14px; }
+  .approach-node__icon { width: 60px; height: 60px; }
+  .approach-node__icon svg { width: 42px; height: 42px; }
+  .approach-node__copy h3 { font-size: 18px; }
+  .approach-node__catch { font-size: 12px; }
+  .approach-node__description { font-size: 11px; }
+}
