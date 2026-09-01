@@ -1,10 +1,11 @@
 ---
 type ApproachType = 'question' | 'access' | 'experiment' | 'value';
+type ApproachVariant = 'partner' | 'overview';
 
-const { type } = Astro.props as { type: ApproachType };
+const { type, variant = 'partner' } = Astro.props as { type: ApproachType; variant?: ApproachVariant };
 ---
 
-<span class="partner-approach__icon" aria-hidden="true">
+<span class={variant === 'overview' ? 'approach-node__icon' : 'partner-approach__icon'} aria-hidden="true">
   {type === 'question' && (
     <svg viewBox="0 0 24 24" role="img">
       <path d="M10 2v5.2l-4.6 7.2A3 3 0 0 0 7.9 19h8.2a3 3 0 0 0 2.5-4.6L14 7.2V2" />
