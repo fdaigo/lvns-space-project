@@ -42,13 +42,13 @@ export const approaches: ApproachPage[] = [
     examplesTitle: '問いをつくる起点',
     examples: ['技術・研究課題', '宇宙環境との掛け合わせ', '仮説から研究テーマへ'],
     closing: '研究テーマを探すのではない。宇宙だからこそ生まれる問いをつくる。',
-    next: { slug: 'access', number: '02', keyword: 'ACCESS', title: '宇宙実験アクセス基盤' },
+    next: { slug: 'access', number: '02', keyword: 'ACCESS', title: '実験アクセス基盤構築' },
   },
   {
     slug: 'access',
     number: '02',
     keyword: 'ACCESS',
-    title: '宇宙実験アクセス基盤',
+    title: '実験アクセス基盤構築',
     catchphrase: '研究に最適な「宇宙への行き方」をつくる。',
     lead: [
       '宇宙実験の方法は、一つではありません。',
@@ -62,13 +62,13 @@ export const approaches: ApproachPage[] = [
     examplesTitle: '比較する項目',
     examples: ['実施時期', '実験期間', '搭載サイズ', '回収条件', 'コスト', '打上げ頻度', 'リスク', '代替機会'],
     closing: '宇宙へ行く方法を選ぶのではない。研究に最適な宇宙環境を選ぶ。',
-    next: { slug: 'experiment', number: '03', keyword: 'EXPERIMENT', title: '宇宙実験基盤創出' },
+    next: { slug: 'experiment', number: '03', keyword: 'EXPERIMENT', title: '宇宙機器開発' },
   },
   {
     slug: 'experiment',
     number: '03',
     keyword: 'EXPERIMENT',
-    title: '宇宙実験基盤創出',
+    title: '宇宙機器開発',
     catchphrase: '宇宙で「できる実験」を増やす。',
     lead: [
       '宇宙へ行く機会があっても、実験するための装置がなければ研究はできません。',
