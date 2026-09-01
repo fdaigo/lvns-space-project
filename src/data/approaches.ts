@@ -60,7 +60,7 @@ export const approaches: ApproachPage[] = [
     imageAlt: '宇宙実験アクセス基盤の全体像を示すスライド',
     process: ['研究テーマ', '研究要件整理', '宇宙実験機会調査', '比較・評価', 'アクセス方法選定', '実施計画', '宇宙実験'],
     examplesTitle: '比較する項目',
-    examples: ['実施時期', '実験期間', '搭載サイズ', '回収条件', 'コスト', '打上げ頻度', 'リスク', '代替機会'],
+    examples: ['実施時期', '実験期間', '搭載サイズ', '回収条件', '運用条件', '打上げ頻度', 'リスク', '代替機会'],
     closing: '宇宙へ行く方法を選ぶのではない。研究に最適な宇宙環境を選ぶ。',
     next: { slug: 'experiment', number: '03', keyword: 'EXPERIMENT', title: '宇宙機器開発' },
   },
