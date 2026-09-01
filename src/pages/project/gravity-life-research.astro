@@ -1,0 +1,11 @@
+---
+import ProjectDetail from '../../components/ProjectDetail.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+
+const project = projects[0];
+---
+
+<BaseLayout title={`${project.name} | LVNS SPACE PROJECT`} description={project.summary} image={project.image}>
+  <ProjectDetail project={project} />
+</BaseLayout>
