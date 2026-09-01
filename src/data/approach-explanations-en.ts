@@ -1,0 +1,85 @@
+import type { ApproachExplanation } from './approach-explanations';
+
+export const approachExplanationsEn: Record<string, ApproachExplanation> = {
+  question: {
+    kicker: 'MODEL EXPLAINED / 読み解き',
+    title: 'Turn technical challenges into research themes to pursue in space',
+    summary: 'We start with a company’s technical or research challenge, then combine dialogue with researchers and knowledge of the space environment. This is the entry point where we form a question, develop a hypothesis, test it on Earth, and connect it to a space experiment.',
+    inputLabel: 'Company technical or research challenge',
+    inputItems: ['Materials and chemistry', 'Food and beverages', 'Healthcare', 'Living and environment'],
+    stages: [
+      { number: '01', title: 'Open the question', description: 'We organize the Earth-based challenge and reconsider it after removing assumptions such as gravity and convection.', outputs: ['Challenge map', 'Seeds of hypotheses'] },
+      { number: '02', title: 'Design the research theme', description: 'We refine the hypothesis with researchers and turn it into a theme that can be scientifically tested.', outputs: ['Testable research theme', 'Earth preliminary study plan'] },
+      { number: '03', title: 'Connect research to proof', description: 'We confirm feasibility on Earth and define what should be observed in space and how the next experiment will run.', outputs: ['Research results and data', 'Connection to a space experiment'] },
+    ],
+    outputLabel: 'A research theme worth pursuing in space',
+    outputItems: ['Research plan', 'Researcher implementation team', 'Preparation for a space experiment'],
+    rolesTitle: 'Roles that grow a research theme',
+    roles: [
+      { name: 'Leave a Nest', role: 'Research Producer', detail: 'Establishes the challenge as a research project' },
+      { name: 'Space Nome Lab', role: 'Science Lead', detail: 'Guides the hypothesis toward sound research and experiments' },
+      { name: 'IDDK', role: 'Engineering Reviewer', detail: 'Checks technical conditions and space implementation feasibility' },
+    ],
+  },
+  access: {
+    kicker: 'MODEL EXPLAINED / 読み解き',
+    title: 'Turn research requirements into the best space experiment plan',
+    summary: 'We organize the research objective and conditions, then compare multiple space experiment opportunities using the same criteria. The function is not simply to reach space, but to choose the place, timing, and method that best fit the research.',
+    inputLabel: 'Company or researcher research theme',
+    inputItems: ['Research objective', 'Required space environment', 'Experiment duration', 'Payload and sample conditions', 'Recovery or crew-operation needs'],
+    stages: [
+      { number: '01', title: 'Define research requirements', description: 'We clarify what the research needs and translate it into requirements for the space environment.', outputs: ['Research requirements', 'Priority of experiment conditions'] },
+      { number: '02', title: 'Survey opportunities', description: 'We map crewed space environments, uncrewed recoverable satellites, and short- and long-duration orbital options.', outputs: ['Candidate opportunities', 'Payload and operation conditions'] },
+      { number: '03', title: 'Compare and evaluate', description: 'We compare scientific fit, technical feasibility, timing, recovery, and operational conditions side by side.', outputs: ['Comparison result', 'Recommended access method'] },
+      { number: '04', title: 'Build the implementation plan', description: 'We specify what will be done, when, and how within the selected opportunity.', outputs: ['Space experiment access plan', 'Next implementation actions'] },
+    ],
+    outputLabel: 'A space experiment access plan fit for the research',
+    outputItems: ['WHERE / where', 'WHEN / when', 'HOW / how', 'WHAT / what to experiment'],
+    rolesTitle: 'Roles that design access',
+    roles: [
+      { name: 'Leave a Nest', role: 'Research Producer', detail: 'Designs an executable plan from the research objective' },
+      { name: 'IDDK', role: 'Space Access Partner', detail: 'Finds opportunities and makes the options comparable' },
+    ],
+  },
+  experiment: {
+    kicker: 'MODEL EXPLAINED / 読み解き',
+    title: 'Turn Earth-based research equipment into shared infrastructure for space',
+    summary: 'We do not simply take Earth-based equipment into orbit. We redesign it for the space environment, validate it through demonstration, and develop it into tools and experiment menus that the next researchers can also use.',
+    inputLabel: 'Earth-based research equipment and technology',
+    inputItems: ['Microscope', 'Culture equipment', 'Sensors', 'Analytical equipment', 'Material evaluation equipment'],
+    stages: [
+      { number: '01', title: 'Design for space', description: 'We define the use case and requirements for microgravity, safety, size, power, communications, and temperature.', outputs: ['Space-use requirements', 'Adaptation direction'] },
+      { number: '02', title: 'Develop the instrument', description: 'We create a prototype and operating method that researchers can use while meeting space constraints.', outputs: ['Space-ready prototype', 'Earth test results'] },
+      { number: '03', title: 'Demonstrate in space', description: 'We verify operation, performance, reliability, and data acquisition in orbit.', outputs: ['Space demonstration data', 'Improvement points'] },
+      { number: '04', title: 'Grow a shared tool', description: 'We standardize the conditions and procedures so multiple researchers can use a shared experimental base.', outputs: ['Shared experiment tools', 'Standard experiment menu'] },
+    ],
+    outputLabel: 'Shared experimental infrastructure usable in space',
+    outputItems: ['Cell culture and crystal growth', 'Material evaluation and fluid experiments', 'More users', 'Improvement for the next study'],
+    rolesTitle: 'Roles that grow equipment into infrastructure',
+    roles: [
+      { name: 'Leave a Nest', role: 'Research Producer / PM', detail: 'Connects research use with users and manages the whole program' },
+      { name: 'IDDK', role: 'Space Engineering', detail: 'Leads space adaptation, technical evaluation, and demonstration' },
+      { name: 'Equipment manufacturer', role: 'Technology Owner', detail: 'Provides equipment knowledge, manufacturing, and improvement capability' },
+    ],
+  },
+  value: {
+    kicker: 'MODEL EXPLAINED / 読み解き',
+    title: 'Use space data to redefine the value of products on Earth',
+    summary: 'We revisit values taken for granted on Earth across food and beverages, cosmetics, living environments, healthcare, and materials. We turn hypotheses into evaluation methods, then connect them to standards that products and society can use.',
+    inputLabel: 'Product value a company wants to revisit',
+    inputItems: ['Taste', 'Sense of comfort', 'Safety', 'Quality of life', 'Functionality', 'Durability'],
+    stages: [
+      { number: '01', title: 'Form a value hypothesis', description: 'We break down the value of a product or technology and turn the space-based question into a research theme.', outputs: ['Value hypothesis', 'Research theme'] },
+      { number: '02', title: 'Evaluate in space', description: 'We design the experiment, establish data acquisition and evaluation protocols, and scientifically capture the difference from Earth.', outputs: ['Experimental data', 'Evaluation method and metrics'] },
+      { number: '03', title: 'Implement in Earth products', description: 'We translate the findings into standards and product requirements, connecting them to development and social implementation.', outputs: ['New value standard', 'Product development roadmap'] },
+    ],
+    outputLabel: 'Product value redefined from space',
+    outputItems: ['Scientific evaluation standards', 'Implementation in products and services', 'Differentiation for Earth products'],
+    rolesTitle: 'Roles that connect value to society',
+    roles: [
+      { name: 'Leave a Nest', role: 'Research Producer', detail: 'Designs themes, recruits researchers, and leads the program' },
+      { name: 'Universities and researchers', role: 'Scientific Partner', detail: 'Creates hypotheses, experiments, metrics, and research results' },
+      { name: 'Company', role: 'Product Owner', detail: 'Provides the product, customer, and implementation perspective' },
+    ],
+  },
+};
