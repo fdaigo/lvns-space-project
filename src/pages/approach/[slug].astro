@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { approaches, type ApproachPage } from '../../data/approaches';
+import { approachExplanations } from '../../data/approach-explanations';
+import ApproachExplainer from '../../components/ApproachExplainer.astro';
 
 export function getStaticPaths() {
   return approaches.map((approach) => ({
@@ -11,6 +13,8 @@ export function getStaticPaths() {
 
 type Props = { approach: ApproachPage };
 const { approach } = Astro.props;
+const explanation = approachExplanations[approach.slug];
+if (!explanation) throw new Error(`Missing explanation for approach: ${approach.slug}`);
 const nextHref = approach.next ? `/approach/${approach.next.slug}/` : '/#approach';
 ---
 
@@ -32,10 +36,12 @@ const nextHref = approach.next ? `/approach/${approach.next.slug}/` : '/#approac
             <p class="approach-detail__emphasis"><strong>{approach.emphasis}</strong></p>
           </div>
         </div>
-        <figure class="approach-detail__visual">
-          <img src={approach.image} alt={approach.imageAlt} loading="eager" />
-          <figcaption>{approach.keyword} / LVNS SPACE PROJECT</figcaption>
-        </figure>
+      </div>
+    </section>
+
+    <section class="approach-detail__explainer section-gray" aria-labelledby="approach-explainer-title">
+      <div class="content-inner">
+        <ApproachExplainer explanation={explanation} />
       </div>
     </section>
 
