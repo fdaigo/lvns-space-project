@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import ApproachIcon from '../../components/ApproachIcon.astro';
 import ApproachOverview from '../../components/ApproachOverview.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { approachesEn } from '../../data/approaches-en';
@@ -156,10 +155,6 @@ const approachCards = approachesEn.map((approach) => ({
               <div class="partner-card__body">
                 <p class="partner-card__role">OPERATING PARTNER</p>
                 <h4>IDDK Co., Ltd.</h4>
-                <div class="partner-approaches" aria-label="Approaches led by IDDK Co., Ltd.">
-                  <a class="partner-approach" href="/en/approach/access/"><ApproachIcon type="access" /><span><small>02 / ACCESS</small><strong>Experiment Access Platform Development</strong></span></a>
-                  <a class="partner-approach" href="/en/approach/experiment/"><ApproachIcon type="experiment" /><span><small>03 / EXPERIMENT</small><strong>Space Equipment Development</strong></span></a>
-                </div>
               </div>
             </article>
             <article class="partner-card">
@@ -167,10 +162,6 @@ const approachCards = approachesEn.map((approach) => ({
               <div class="partner-card__body">
                 <p class="partner-card__role">OPERATING PARTNER</p>
                 <h4>Space Nome Research Institute Co., Ltd.</h4>
-                <div class="partner-approaches" aria-label="Approaches led by Space Nome Research Institute Co., Ltd.">
-                  <a class="partner-approach" href="/en/approach/question/"><ApproachIcon type="question" /><span><small>01 / QUESTION</small><strong>Creating Research Questions</strong></span></a>
-                  <a class="partner-approach" href="/en/approach/value/"><ApproachIcon type="value" /><span><small>04 / VALUE</small><strong>Creating New Value Standards</strong></span></a>
-                </div>
               </div>
             </article>
           </div>
@@ -181,16 +172,10 @@ const approachCards = approachesEn.map((approach) => ({
             <h3 id="development-partners-title">Development Partner</h3>
           </div>
           <div class="partner-grid partner-grid--single">
-            <article class="partner-card">
-              <div class="partner-card__logo"><img src="/images/partners/hasetora-spinning.png" alt="Hasetora Spinning Co., Ltd." loading="lazy" /></div>
-              <div class="partner-card__body">
-                <p class="partner-card__role">DEVELOPMENT PARTNER</p>
-                <h4>Hasetora Spinning Co., Ltd.</h4>
-                <div class="partner-approaches" aria-label="Approaches supported by Hasetora Spinning Co., Ltd.">
-                  <a class="partner-approach" href="/en/approach/experiment/"><ApproachIcon type="experiment" /><span><small>03 / EXPERIMENT</small><strong>Space Equipment Development</strong></span></a>
-                </div>
-              </div>
-            </article>
+            <div class="partner-coming-soon">
+              <span>DEVELOPMENT PARTNER</span>
+              <strong>Coming soon</strong>
+            </div>
           </div>
         </section>
       </div>
