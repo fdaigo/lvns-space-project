@@ -41,7 +41,7 @@ const nextHref = approach.next ? `/approach/${approach.next.slug}/` : '/#approac
 
     <section class="approach-detail__explainer section-gray" aria-labelledby="approach-explainer-title">
       <div class="content-inner">
-        <ApproachExplainer explanation={explanation} />
+        <ApproachExplainer explanation={explanation} image={approach.image} imageAlt={approach.imageAlt} />
       </div>
     </section>
 
