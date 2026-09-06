@@ -3,9 +3,11 @@ import type { ApproachExplanation } from '../data/approach-explanations';
 
 type Props = {
   explanation: ApproachExplanation;
+  image: string;
+  imageAlt: string;
 };
 
-const { explanation } = Astro.props;
+const { explanation, image, imageAlt } = Astro.props;
 ---
 
 <div class="approach-explainer" aria-label={explanation.title}>
@@ -14,6 +16,11 @@ const { explanation } = Astro.props;
     <h2 id="approach-explainer-title">{explanation.title}</h2>
     <p>{explanation.summary}</p>
   </div>
+
+  <figure class="approach-explainer__visual">
+    <img src={image} alt={imageAlt} width="1638" height="924" loading="lazy" />
+    <figcaption>APPROACH OVERVIEW / LVNS SPACE PROJECT</figcaption>
+  </figure>
 
   <div class="approach-explainer__map">
     <div class="approach-explainer__endpoint approach-explainer__endpoint--input">
