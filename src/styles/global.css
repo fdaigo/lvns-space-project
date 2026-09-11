@@ -498,13 +498,10 @@ button { font: inherit; }
   .approach-node__description { font-size: 11px; }
 }
 
-/* Center the partner labels and keep the development slot ready for a future announcement. */
+/* Keep partner labels and names centered across both partner groups. */
 .partner-group__heading { justify-content: center; text-align: center; }
 .partner-card__body { text-align: center; }
 .partner-grid--single { width: min(520px, 100%); margin: 0 auto; grid-template-columns: 1fr; }
-.partner-coming-soon { display: grid; min-height: 180px; place-items: center; align-content: center; gap: 12px; padding: 28px; border: 1px solid #d8d9eb; background: rgba(255,255,255,.72); box-shadow: 0 12px 28px rgba(23, 28, 97, .05); text-align: center; }
-.partner-coming-soon span { color: var(--purple); font-family: 'Open Sans', sans-serif; font-size: 11px; font-style: italic; font-weight: 600; letter-spacing: .16em; }
-.partner-coming-soon strong { color: var(--blue-dark); font-family: 'Jost', sans-serif; font-size: 31px; font-style: italic; font-weight: 500; line-height: 1.2; }
 
 .approach-detail__hero-inner { display: block; }
 .approach-detail__copy { max-width: 900px; }
@@ -514,9 +511,6 @@ button { font: inherit; }
 .approach-explainer__kicker, .approach-explainer__label, .approach-explainer__outputs > span, .approach-explainer__roles-heading > span { margin: 0; color: var(--purple); font-family: 'Open Sans', sans-serif; font-size: 10px; font-style: italic; font-weight: 600; letter-spacing: .16em; }
 .approach-explainer__header h2 { margin: 15px 0 16px; color: var(--blue-dark); font-size: clamp(23px, 2.7vw, 36px); font-weight: 500; line-height: 1.5; }
 .approach-explainer__header > p:last-child { max-width: 720px; margin: 0; color: #444; font-size: 14px; line-height: 1.95; }
-.approach-explainer__visual { margin: 31px 0 0; }
-.approach-explainer__visual img { width: 100%; height: auto; border: 1px solid #d9d9ed; background: var(--white); box-shadow: 0 14px 35px rgba(23, 28, 97, .08); }
-.approach-explainer__visual figcaption { margin-top: 10px; color: #777b9f; font-family: 'Open Sans', sans-serif; font-size: 10px; font-style: italic; letter-spacing: .16em; text-align: right; }
 .approach-explainer__map { display: grid; grid-template-columns: minmax(170px, .72fr) minmax(0, 1.65fr) minmax(190px, .8fr); gap: 20px; align-items: start; margin-top: 35px; }
 .approach-explainer__endpoint { position: relative; padding: 21px 20px 23px; border: 1px solid #c6c9e6; background: linear-gradient(160deg, rgba(227,232,255,.66), rgba(255,255,255,.85)); }
 .approach-explainer__endpoint--input { border-top: 3px solid var(--blue); }
