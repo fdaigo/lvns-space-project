@@ -39,8 +39,8 @@ export const projects: ProjectPage[] = [
     eyebrow: 'SPACE BIO / RESEARCH & EDUCATION',
     catchphrase: '微細藻類を通じて、重力の外側にある生命のふるまいを探る。',
     summary: '人工衛星「あおば」に超小型細胞培養ユニットを搭載し、微小重力環境で微細藻類ユーグレナを観察します。宇宙での実験と地上での解析を、中高生を中心とした次世代とともに進める研究・教育プロジェクトです。',
-    image: '/images/projects/gravity-life-research.png',
-    imageAlt: '微細藻類を培養する小型宇宙実験モジュールと地球',
+    image: '/images/projects/gravity-life-research.jpg',
+    imageAlt: '宇宙実験用の小型細胞培養モジュール',
     stepsTitle: '実施内容',
     steps: [
       {
