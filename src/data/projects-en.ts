@@ -8,8 +8,8 @@ export const projectsEn: ProjectPage[] = [
     eyebrow: 'SPACE BIO / RESEARCH & EDUCATION',
     catchphrase: 'Explore how life behaves beyond gravity through microalgae.',
     summary: 'A compact cell-culture unit will fly on the Aoba satellite to observe the microalga Euglena in microgravity. The project combines space experiments, Earth-based analysis, and a research-and-education program developed with the next generation, especially middle and high school students.',
-    image: '/images/projects/gravity-life-research.png',
-    imageAlt: 'Compact orbital experiment module cultivating microalgae above Earth',
+    image: '/images/projects/gravity-life-research.jpg',
+    imageAlt: 'Compact cell-culture module for a space experiment',
     stepsTitle: 'WHAT WE WILL DO',
     steps: [
       {
