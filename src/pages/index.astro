@@ -3,10 +3,9 @@ import { getCollection } from 'astro:content';
 import ApproachOverview from '../components/ApproachOverview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { projects } from '../data/projects';
+import { sortNewsByNewest } from '../utils/news';
 
-const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+const visibleNews = sortNewsByNewest(await getCollection('news', ({ data }) => !data.draft)).slice(0, 3);
 const featuredProject = projects[0];
 
 const approachCards = [
