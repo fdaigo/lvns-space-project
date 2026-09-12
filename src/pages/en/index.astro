@@ -5,10 +5,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { approachesEn } from '../../data/approaches-en';
 import { getEnglishNews } from '../../data/news-en';
 import { projectsEn } from '../../data/projects-en';
+import { sortNewsByNewest } from '../../utils/news';
 
-const visibleNews = (await getCollection('news', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+const visibleNews = sortNewsByNewest(await getCollection('news', ({ data }) => !data.draft)).slice(0, 3);
 const featuredProject = projectsEn[0];
 
 const approachCards = approachesEn.map((approach) => ({
