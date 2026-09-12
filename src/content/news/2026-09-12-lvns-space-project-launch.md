@@ -3,7 +3,7 @@ title: LVNS SPACE PROJECT発足・公式Webページ公開
 description: LVNS SPACE PROJECTを発足し、公式Webページを公開しました。
 pubDate: 2026-09-12
 updatedDate: 2026-09-12
-heroImage: https://space.lne.st/wp-content/themes/lnest_space/images/top/fva@2x.jpg
+heroImage: /images/news/lvns-space-project-launch.jpg
 tags:
   - Project
   - News
