@@ -2,10 +2,9 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getEnglishNews } from '../../../data/news-en';
+import { sortNewsByNewest } from '../../../utils/news';
 
-const posts = (await getCollection('news', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = sortNewsByNewest(await getCollection('news', ({ data }) => !data.draft));
 ---
 
 <BaseLayout lang="en" title="News" description="The latest news from LVNS SPACE PROJECT">
