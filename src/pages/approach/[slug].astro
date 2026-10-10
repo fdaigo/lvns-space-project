@@ -23,7 +23,7 @@ const nextHref = approach.next ? `/approach/${approach.next.slug}/` : '/#approac
   description={approach.catchphrase}
   image={approach.image}
 >
-  <main class="approach-detail">
+  <div class="approach-detail">
     <section class="approach-detail__hero section-gray" aria-labelledby="approach-detail-title">
       <div class="content-inner approach-detail__hero-inner">
         <div class="approach-detail__copy">
@@ -91,5 +91,5 @@ const nextHref = approach.next ? `/approach/${approach.next.slug}/` : '/#approac
         )}
       </div>
     </section>
-  </main>
+  </div>
 </BaseLayout>

@@ -29,6 +29,8 @@ export type ProjectPage = {
   closing: string;
   sourceLabel: string;
   sourceUrl: string;
+  relatedLinkLabel?: string;
+  relatedLinkUrl?: string;
 };
 
 export const projects: ProjectPage[] = [
@@ -77,6 +79,8 @@ export const projects: ProjectPage[] = [
     closing: '宇宙で生命を観察し、研究のプロセスを次の世代へひらく。',
     sourceLabel: '参考：リバネス「宇宙バイオ実験と次世代教育プロジェクトを開始」',
     sourceUrl: 'https://lne.st/2026/05/07/space_sat/',
+    relatedLinkLabel: '人工衛星「あおば」について（エレベーションスペース）',
+    relatedLinkUrl: 'https://elevation-space.com/aoba',
   },
 ];
 

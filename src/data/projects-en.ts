@@ -46,6 +46,8 @@ export const projectsEn: ProjectPage[] = [
     closing: 'Observe life in space, and open the research process to the next generation.',
     sourceLabel: 'Reference: Leave a Nest, “Space bio experiment and next-generation education project”',
     sourceUrl: 'https://lne.st/2026/05/07/space_sat/',
+    relatedLinkLabel: 'About the Aoba satellite (ElevationSpace)',
+    relatedLinkUrl: 'https://elevation-space.com/aoba',
   },
 ];
 

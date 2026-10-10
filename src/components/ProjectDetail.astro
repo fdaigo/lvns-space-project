@@ -13,7 +13,7 @@ const backLabel = isEnglish ? '← ALL PROJECTS' : '← PROJECTS一覧';
 const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
 ---
 
-<main class="project-detail">
+<div class="project-detail">
   <section class="project-detail__hero section-gray" aria-labelledby="project-detail-title">
     <div class="content-inner project-detail__hero-inner">
       <div class="project-detail__copy">
@@ -74,7 +74,8 @@ const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
     <div class="content-inner">
       <p>{project.closing}</p>
       <a class="project-detail__source" href={project.sourceUrl} target="_blank" rel="noreferrer">{sourceLabel} <span>↗</span></a>
+      {project.relatedLinkUrl && project.relatedLinkLabel && <a class="project-detail__source" href={project.relatedLinkUrl} target="_blank" rel="noreferrer">{project.relatedLinkLabel} <span>↗</span></a>}
       <a class="project-detail__back" href={backHref}>{isEnglish ? 'BACK TO PROJECTS' : 'PROJECTSへ戻る'} <span>↗</span></a>
     </div>
   </section>
-</main>
+</div>
