@@ -7,7 +7,7 @@ export const projectsEn: ProjectPage[] = [
     englishName: '重力外生命研究プロジェクト',
     eyebrow: 'SPACE BIO / RESEARCH & EDUCATION',
     catchphrase: 'Explore how life behaves beyond gravity through microalgae.',
-    summary: 'A compact cell-culture unit will fly on the Aoba satellite to observe the microalga Euglena in microgravity. The project combines space experiments, Earth-based analysis, and a research-and-education program developed with the next generation, especially middle and high school students.',
+    summary: 'A compact cell-culture unit will fly on the Aoba satellite developed by ElevationSpace Inc. to observe the microalga Euglena in microgravity. The project combines space experiments, Earth-based analysis, and a research-and-education program developed with the next generation, especially middle and high school students.',
     image: '/images/projects/gravity-life-research.jpg',
     imageAlt: 'Compact cell-culture module for a space experiment',
     stepsTitle: 'WHAT WE WILL DO',
@@ -16,7 +16,7 @@ export const projectsEn: ProjectPage[] = [
         number: '01',
         title: 'Culture and observe microalgae in space',
         lead: 'Look closely at how life behaves in microgravity.',
-        body: 'A compact cell-culture unit designed for limited spacecraft volume will fly on the Aoba satellite. We will observe how the microalga Euglena moves and reproduces, and examine how the space environment affects living systems.',
+        body: 'A compact cell-culture unit designed for limited spacecraft volume will fly on a satellite. We will observe how the microalga Euglena moves and reproduces, and examine how the space environment affects living systems.',
         points: ['Compact cell-culture unit', 'Observation of movement and reproduction in microgravity', 'Study of how the space environment affects life'],
       },
       {
@@ -38,7 +38,6 @@ export const projectsEn: ProjectPage[] = [
     teamIntro: 'The team combines expertise in space biology, satellites and experimental equipment, life science, and education to build the full research process.',
     team: [
       { name: 'Leave a Nest Co., Ltd.', role: 'PROJECT ORGANIZER', description: 'Takes forward the inherited space-related business and leads the research and education program.' },
-      { name: 'ElevationSpace Inc.', role: 'SPACE ACCESS', description: 'Provides the space experiment opportunity and recovery architecture through the Aoba satellite.' },
       { name: 'euglena Co., Ltd.', role: 'BIORESOURCE PARTNER', description: 'Provides technology and biological resources related to the microalga Euglena.' },
       { name: 'IDDK Co., Ltd.', role: 'SPACE ENGINEERING', description: 'Develops the compact cell-culture unit using technologies such as lensless microscopic observation.' },
       { name: 'Space Nome Research Institute Co., Ltd.', role: 'SCIENCE & EDUCATION', description: 'Supports space bio-experiment equipment development and returns the research results to education.' },
@@ -46,8 +45,6 @@ export const projectsEn: ProjectPage[] = [
     closing: 'Observe life in space, and open the research process to the next generation.',
     sourceLabel: 'Reference: Leave a Nest, “Space bio experiment and next-generation education project”',
     sourceUrl: 'https://lne.st/2026/05/07/space_sat/',
-    relatedLinkLabel: 'About the Aoba satellite (ElevationSpace)',
-    relatedLinkUrl: 'https://elevation-space.com/aoba',
   },
 ];
 

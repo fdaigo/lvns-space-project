@@ -29,8 +29,6 @@ export type ProjectPage = {
   closing: string;
   sourceLabel: string;
   sourceUrl: string;
-  relatedLinkLabel?: string;
-  relatedLinkUrl?: string;
 };
 
 export const projects: ProjectPage[] = [
@@ -40,7 +38,7 @@ export const projects: ProjectPage[] = [
     englishName: 'Life Beyond Gravity Research Project',
     eyebrow: 'SPACE BIO / RESEARCH & EDUCATION',
     catchphrase: '微細藻類を通じて、重力の外側にある生命のふるまいを探る。',
-    summary: '人工衛星「あおば」に超小型細胞培養ユニットを搭載し、微小重力環境で微細藻類ユーグレナを観察します。宇宙での実験と地上での解析を、中高生を中心とした次世代とともに進める研究・教育プロジェクトです。',
+    summary: '株式会社ElevationSpaceの開発する人工衛星「あおば」に超小型細胞培養ユニットを搭載し、微小重力環境で微細藻類ユーグレナを観察します。宇宙での実験と地上での解析を、中高生を中心とした次世代とともに進める研究・教育プロジェクトです。',
     image: '/images/projects/gravity-life-research.jpg',
     imageAlt: '宇宙実験用の小型細胞培養モジュール',
     stepsTitle: '実施内容',
@@ -49,7 +47,7 @@ export const projects: ProjectPage[] = [
         number: '01',
         title: '宇宙で微細藻類を培養・観察する',
         lead: '微小重力環境で、生命のふるまいを見つめる。',
-        body: '限られた宇宙空間で実験できる超小型細胞培養ユニットを人工衛星「あおば」に搭載します。微細藻類ユーグレナがどのように動き、増殖するのかを観察し、宇宙環境から受ける影響を検証します。',
+        body: '限られた宇宙空間で実験できる超小型細胞培養ユニットを人工衛星に搭載します。微細藻類ユーグレナがどのように動き、増殖するのかを観察し、宇宙環境から受ける影響を検証します。',
         points: ['超小型細胞培養ユニット', '微小重力下での動き・増殖の観察', '宇宙環境が生物に与える影響の検証'],
       },
       {
@@ -71,7 +69,6 @@ export const projects: ProjectPage[] = [
     teamIntro: '宇宙バイオ実験、衛星・実験装置、生命科学、教育の知見を持つチームで、研究プロセス全体をつくります。',
     team: [
       { name: '株式会社リバネス', role: 'PROJECT ORGANIZER', description: '宇宙関連事業を引き継ぎ、研究・教育プロジェクト全体を推進します。' },
-      { name: '株式会社ElevationSpace', role: 'SPACE ACCESS', description: '人工衛星「あおば」による宇宙実験の機会と回収の仕組みを提供します。' },
       { name: '株式会社ユーグレナ', role: 'BIORESOURCE PARTNER', description: '微細藻類ユーグレナに関する技術と生物資源を提供します。' },
       { name: '株式会社IDDK', role: 'SPACE ENGINEERING', description: 'レンズレス顕微観察などを用いた超小型細胞培養ユニットの開発を担います。' },
       { name: '株式会社スペースノーム研究所', role: 'SCIENCE & EDUCATION', description: '宇宙バイオ実験装置の開発支援と、研究成果の教材化・教育還元を担います。' },
@@ -79,8 +76,6 @@ export const projects: ProjectPage[] = [
     closing: '宇宙で生命を観察し、研究のプロセスを次の世代へひらく。',
     sourceLabel: '参考：リバネス「宇宙バイオ実験と次世代教育プロジェクトを開始」',
     sourceUrl: 'https://lne.st/2026/05/07/space_sat/',
-    relatedLinkLabel: '人工衛星「あおば」について（エレベーションスペース）',
-    relatedLinkUrl: 'https://elevation-space.com/aoba',
   },
 ];
 
