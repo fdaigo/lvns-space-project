@@ -636,3 +636,16 @@ button { font: inherit; }
   .project-detail__closing { padding: 83px 0 91px; }
   .project-detail__closing > .content-inner > p { font-size: 23px; }
 }
+/* インタビュー記事の画像を元の比率で全体表示 */
+.news-article__hero:has(img[src*="fujita-space-interview2"]) {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.news-article__hero img[src*="fujita-space-interview2"] {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
+}
