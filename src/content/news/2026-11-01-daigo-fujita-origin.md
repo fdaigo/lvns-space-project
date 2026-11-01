@@ -6,7 +6,7 @@ updatedDate: 2026-11-01
 tags:
   - INTERVIEW
   - LVNS SPACE PROJECT
-heroImage: /assets/fujita-space-interview.jpeg
+heroImage: /assets/fujita-space-interview2.jpeg
 draft: false
 ---
 
