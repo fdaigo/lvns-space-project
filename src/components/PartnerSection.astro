@@ -3,10 +3,21 @@ interface Props {
   lang?: 'ja' | 'en';
 }
 
+interface Partner {
+  id: string;
+  name: string;
+  logo: string;
+  category: string;
+  intro: string;
+  involvement: string;
+  website: string;
+  lVenturesUrl?: string;
+}
+
 const { lang = 'ja' } = Astro.props;
 const isEnglish = lang === 'en';
 
-const partners = [
+const partners: Partner[] = [
   {
     id: 'iddk',
     name: isEnglish ? 'IDDK Co., Ltd.' : '株式会社IDDK',
@@ -19,7 +30,7 @@ const partners = [
       ? 'As an operating partner, IDDK contributes to the space-experiment access foundation and the development of space-ready research equipment.'
       : '運営パートナーとして、宇宙実験のアクセス基盤構築と宇宙機器開発を担います。',
     website: 'https://iddk.co.jp/',
-    lVentures: true,
+    lVenturesUrl: 'https://ventures.lne.st/ventures/iddk/',
   },
   {
     id: 'spacenome',
@@ -33,7 +44,20 @@ const partners = [
       ? 'As an operating partner, SpaceNome Lab helps create research themes unique to space and connect findings to new value on Earth.'
       : '運営パートナーとして、宇宙ならではの研究テーマ創出と、成果を社会価値へつなぐ基準づくりを担います。',
     website: 'https://spacenome.jp/',
-    lVentures: false,
+  },
+  {
+    id: 'outsense',
+    name: isEnglish ? 'OUTSENSE Inc.' : '株式会社OUTSENSE',
+    logo: '/images/partners/outsense.webp',
+    category: isEnglish ? 'Operating Partner' : '運営パートナー',
+    intro: isEnglish
+      ? 'OUTSENSE applies origami engineering to structural challenges in space, architecture, and manufacturing.'
+      : '折り工学を起点に、宇宙・建築・製造分野の構造課題に取り組む企業です。',
+    involvement: isEnglish
+      ? 'As an operating partner, OUTSENSE participates in the planning and operation of LVNS SPACE PROJECT.'
+      : '運営パートナーとして、LVNS SPACE PROJECTの企画・運営に参画します。',
+    website: 'https://outsense.jp/',
+    lVenturesUrl: 'https://ventures.lne.st/ventures/outsense/',
   },
   {
     id: 'hasetora',
@@ -47,13 +71,12 @@ const partners = [
       ? 'As a development partner, Hasetora is working with the project to develop smart textiles that function in the space environment.'
       : '開発パートナーとして、宇宙環境で機能するスマートテキスタイルの共同開発に取り組みます。',
     website: 'https://hasetora.co.jp/',
-    lVentures: false,
   },
   {
     id: 'leave-a-nest',
     name: isEnglish ? 'Leave a Nest Co., Ltd.' : '株式会社リバネス',
     logo: '/images/partners/leave-a-nest.png',
-    category: isEnglish ? 'Other' : 'その他',
+    category: isEnglish ? 'Organizer' : 'オーガナイザー',
     intro: isEnglish
       ? 'Leave a Nest supports science and technology research, development, and implementation in society by connecting researchers, companies, and institutions.'
       : '科学技術の研究開発と社会実装を支援し、研究者・企業・教育機関をつなぐ会社です。',
@@ -61,7 +84,6 @@ const partners = [
       ? 'As the project organizer, Leave a Nest designs and coordinates the project and connects research themes, companies, researchers, and technologies.'
       : 'プロジェクトを企画・運営し、研究テーマ、企業、研究者、技術の連携を促進します。',
     website: 'https://lne.st/',
-    lVentures: false,
   },
 ];
 
@@ -82,8 +104,8 @@ const labels = isEnglish
           <article class="partner-card">
             <div class="partner-card__tags" aria-label={isEnglish ? 'Partner categories' : 'パートナーの種別'}>
               <span class="partner-tag">{partner.category}</span>
-              {partner.lVentures && (
-                <a class="partner-tag partner-tag--ventures" href="https://ventures.lne.st/ventures/iddk/" target="_blank" rel="noreferrer">
+              {partner.lVenturesUrl && (
+                <a class="partner-tag partner-tag--ventures" href={partner.lVenturesUrl} target="_blank" rel="noreferrer">
                   {labels.venture}
                 </a>
               )}
