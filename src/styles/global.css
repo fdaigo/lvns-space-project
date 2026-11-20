@@ -651,3 +651,5 @@ button { font: inherit; }
   display: block;
   width: 100%;
   height: auto !important;
+  object-fit: contain !important;
+}
