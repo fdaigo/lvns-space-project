@@ -72,30 +72,31 @@ const partners: Partner[] = [
       : '開発パートナーとして、宇宙環境で機能するスマートテキスタイルの共同開発に取り組みます。',
     website: 'https://hasetora.co.jp/',
   },
-  {
-    id: 'leave-a-nest',
-    name: isEnglish ? 'Leave a Nest Co., Ltd.' : '株式会社リバネス',
-    logo: '/images/partners/leave-a-nest.png',
-    category: isEnglish ? 'Organizer' : 'オーガナイザー',
-    intro: isEnglish
-      ? 'Leave a Nest supports science and technology research, development, and implementation in society by connecting researchers, companies, and institutions.'
-      : '科学技術の研究開発と社会実装を支援し、研究者・企業・教育機関をつなぐ会社です。',
-    involvement: isEnglish
-      ? 'As the project organizer, Leave a Nest designs and coordinates the project and connects research themes, companies, researchers, and technologies.'
-      : 'プロジェクトを企画・運営し、研究テーマ、企業、研究者、技術の連携を促進します。',
-    website: 'https://lne.st/',
-  },
 ];
 
+const organizer: Partner = {
+  id: 'leave-a-nest',
+  name: isEnglish ? 'Leave a Nest Co., Ltd.' : '株式会社リバネス',
+  logo: '/images/partners/leave-a-nest.png',
+  category: isEnglish ? 'Organizer' : 'オーガナイザー',
+  intro: isEnglish
+    ? 'Leave a Nest supports science and technology research, development, and implementation in society by connecting researchers, companies, and institutions.'
+    : '科学技術の研究開発と社会実装を支援し、研究者・企業・教育機関をつなぐ会社です。',
+  involvement: isEnglish
+    ? 'As the project organizer, Leave a Nest designs and coordinates the project and connects research themes, companies, researchers, and technologies.'
+    : 'プロジェクトを企画・運営し、研究テーマ、企業、研究者、技術の連携を促進します。',
+  website: 'https://lne.st/',
+};
+
 const labels = isEnglish
-  ? { title: 'PARTNER', lead: 'Let us build the future of space together.', details: 'Company profile', role: 'Project involvement', website: 'Visit official website', close: 'Close', venture: 'L-VENTURES' }
-  : { title: 'PARTNER', lead: '宇宙の未来を、ともにつくる。', details: '会社紹介', role: 'プロジェクトでの関わり', website: '公式Webサイトを見る', close: '閉じる', venture: 'L-VENTURES' };
+  ? { title: 'ECOSYSTEM', eyebrow: 'OUR ECOSYSTEM', lead: 'Let us build the future of space together.', details: 'Company profile', role: 'Project involvement', website: 'Visit official website', close: 'Close', venture: 'L-VENTURES' }
+  : { title: 'ECOSYSTEM', eyebrow: 'OUR ECOSYSTEM', lead: '宇宙の未来を、ともにつくる。', details: '会社紹介', role: 'プロジェクトでの関わり', website: '公式Webサイトを見る', close: '閉じる', venture: 'L-VENTURES' };
 ---
 
-<section class="partner section-gray" id="partner" aria-labelledby="partner-title">
+<section class="partner section-gray" id="partner" aria-labelledby="ecosystem-title">
   <div class="content-inner">
-    <p class="eyebrow">OUR PARTNERS</p>
-    <h2 class="section-title" id="partner-title">{labels.title}</h2>
+    <p class="eyebrow">{labels.eyebrow}</p>
+    <h2 class="section-title" id="ecosystem-title">{labels.title}</h2>
     <p class="partner__lead">{labels.lead}</p>
     <div class="partner-grid partner-grid--unified">
       {partners.map((partner) => {
@@ -132,6 +133,27 @@ const labels = isEnglish
         );
       })}
     </div>
+    <section class="partner-organizer" aria-labelledby={`organizer-name-${lang}`}>
+      <span class="partner-tag partner-organizer__tag">{organizer.category}</span>
+      <button class="partner-organizer__logo" type="button" aria-haspopup="dialog" aria-controls={`organizer-detail-${lang}`} data-partner-dialog={`organizer-detail-${lang}`}>
+        <img src={organizer.logo} alt={organizer.name} loading="lazy" decoding="async" />
+        <span class="sr-only">{isEnglish ? `View ${organizer.name} profile` : `${organizer.name}の紹介を表示`}</span>
+      </button>
+      <h3 class="partner-organizer__name" id={`organizer-name-${lang}`}>{organizer.name}</h3>
+      <dialog class="partner-dialog" id={`organizer-detail-${lang}`} aria-labelledby={`organizer-detail-title-${lang}`}>
+        <div class="partner-dialog__panel" lang={isEnglish ? 'en' : 'ja'}>
+          <button class="partner-dialog__close" type="button" aria-label={labels.close} data-partner-close>×</button>
+          <p class="eyebrow">{labels.details}</p>
+          <h3 id={`organizer-detail-title-${lang}`}>{organizer.name}</h3>
+          <p class="partner-dialog__copy">{organizer.intro}</p>
+          <h4>{labels.role}</h4>
+          <p class="partner-dialog__copy">{organizer.involvement}</p>
+          <a class="partner-dialog__link" href={organizer.website} target="_blank" rel="noreferrer">
+            {labels.website} <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </dialog>
+    </section>
     <div class="partner-note">
       <p>{isEnglish ? 'LVNS SPACE PROJECT welcomes partners who want to create new possibilities through research in space.' : 'LVNS SPACE PROJECTは、宇宙を起点とした新しい挑戦に取り組むパートナーを募集しています。'}</p>
       <a class="text-link" href="mailto:ask@space.lne.st">PARTNER WITH US <span>↗</span></a>
