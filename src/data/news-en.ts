@@ -31,6 +31,17 @@ export const newsEn: Record<string, EnglishNews> = {
     officialLabel: 'Read the official release',
     officialUrl: 'https://lne.st/2026/09/12/lvns-space/',
   },
+  '2026-11-20-outsense-operating-partner': {
+    title: 'OUTSENSE Joins LVNS SPACE PROJECT as an Operating Partner',
+    description: 'OUTSENSE has joined LVNS SPACE PROJECT as an operating partner.',
+    tags: ['Release', 'Partner', 'L-Ventures'],
+    paragraphs: [
+      'LVNS SPACE PROJECT welcomes OUTSENSE as a new operating partner.',
+      'The project aims to build a research environment in space by connecting four approaches: research theme creation, experiment access infrastructure, equipment development, and value standards creation. Together with OUTSENSE, the project will continue advancing its mission to establish a research laboratory in space.',
+    ],
+    officialLabel: 'Learn about OUTSENSE',
+    officialUrl: 'https://ventures.lne.st/ventures/outsense/',
+  },
 };
 
 export function getEnglishNews(post: { id: string; data: { title: string; description: string; tags: string[] } }): EnglishNews {
