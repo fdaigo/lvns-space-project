@@ -7,7 +7,7 @@ interface Partner {
   id: string;
   name: string;
   logo: string;
-  category: string;
+  category?: string;
   intro: string;
   involvement: string;
   website: string;
@@ -44,6 +44,45 @@ const partners: Partner[] = [
       ? 'As an operating partner, SpaceNome Lab helps create research themes unique to space and connect findings to new value on Earth.'
       : '運営パートナーとして、宇宙ならではの研究テーマ創出と、成果を社会価値へつなぐ基準づくりを担います。',
     website: 'https://spacenome.jp/',
+  },
+  {
+    id: 'elevation-space',
+    name: isEnglish ? 'ElevationSpace Inc.' : '株式会社ElevationSpace',
+    logo: '/images/partners/elevation-space.webp',
+    intro: isEnglish
+      ? 'ElevationSpace is developing spacecraft and in-orbit platforms that enable experiments in space and the return of their results to Earth.'
+      : '宇宙機や軌道上実験プラットフォームの開発を通じ、宇宙での実験と成果の地上回収を目指す企業です。',
+    involvement: isEnglish
+      ? 'Listed here as a space-related company featured by L-VENTURES. No separate partner role in LVNS SPACE PROJECT is currently designated.'
+      : 'L-VENTURESに掲載されている宇宙関連企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+    website: 'https://elevation-space.com/',
+    lVenturesUrl: 'https://ventures.lne.st/ventures/elevation-space/',
+  },
+  {
+    id: 'solafune',
+    name: isEnglish ? 'Solafune, Inc.' : '株式会社Solafune',
+    logo: '/images/partners/solafune.webp',
+    intro: isEnglish
+      ? 'Solafune develops satellite imagery analysis and AI platforms to connect geospatial data with real-world challenges.'
+      : '衛星画像解析やAIの基盤を通じて、衛星データと社会・産業の課題をつなぐ企業です。',
+    involvement: isEnglish
+      ? 'Listed here as a space-related company featured by L-VENTURES. No separate partner role in LVNS SPACE PROJECT is currently designated.'
+      : 'L-VENTURESに掲載されている宇宙関連企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+    website: 'https://solafune.com/',
+    lVenturesUrl: 'https://ventures.lne.st/ventures/solafune/',
+  },
+  {
+    id: 'sagri',
+    name: isEnglish ? 'Sagri Co., Ltd.' : 'サグリ株式会社',
+    logo: '/images/partners/sagri.webp',
+    intro: isEnglish
+      ? 'Sagri uses satellite data and AI to support agriculture, land management, and environmental decision-making.'
+      : '衛星データとAIを活用し、農地把握や土壌分析、環境・地域課題の解決に取り組む企業です。',
+    involvement: isEnglish
+      ? 'Listed here as a space-related company featured by L-VENTURES. No separate partner role in LVNS SPACE PROJECT is currently designated.'
+      : 'L-VENTURESに掲載されている宇宙関連企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+    website: 'https://sagri.tokyo/',
+    lVenturesUrl: 'https://ventures.lne.st/ventures/sagri/',
   },
   {
     id: 'outsense',
@@ -89,8 +128,28 @@ const organizer: Partner = {
 };
 
 const labels = isEnglish
-  ? { title: 'ECOSYSTEM', eyebrow: 'OUR ECOSYSTEM', lead: 'Let us build the future of space together.', details: 'Company profile', role: 'Project involvement', website: 'Visit official website', close: 'Close', venture: 'L-VENTURES' }
-  : { title: 'ECOSYSTEM', eyebrow: 'OUR ECOSYSTEM', lead: '宇宙の未来を、ともにつくる。', details: '会社紹介', role: 'プロジェクトでの関わり', website: '公式Webサイトを見る', close: '閉じる', venture: 'L-VENTURES' };
+  ? {
+      title: 'ECOSYSTEM',
+      eyebrow: 'OUR ECOSYSTEM',
+      lead: 'Let us build the future of space together.',
+      context: 'This section introduces space-related companies connected with the Leave a Nest Group. Within LVNS SPACE PROJECT, designated partners collaborate to establish the research laboratory: Operating Partners lead technology development for its establishment, Development Partners create new space businesses, and Platform Partners connect space with Earth to expand our activities. The L-VENTURES tag identifies companies featured by L-VENTURES; it does not by itself indicate participation as a project partner.',
+      details: 'Company profile',
+      role: 'Project involvement',
+      website: 'Visit official website',
+      close: 'Close',
+      venture: 'L-VENTURES',
+    }
+  : {
+      title: 'ECOSYSTEM',
+      eyebrow: 'OUR ECOSYSTEM',
+      lead: '宇宙の未来を、ともにつくる。',
+      context: 'リバネスグループとつながりのある、宇宙関連企業を紹介しています。LVNS SPACE PROJECTでは、研究所設立に向けた技術開発を担う運営パートナー、新たな宇宙事業を開発する開発パートナー、宇宙と地球をつなぐプラットフォームパートナーと連携し、活動を広げていきます。各社のタグで、本プロジェクトにおけるパートナーとしての立場をご確認いただけます。L-VENTURESタグは同サイトで紹介されている企業を示すもので、それだけで本プロジェクトへの参画を示すものではありません。',
+      details: '会社紹介',
+      role: 'プロジェクトでの関わり',
+      website: '公式Webサイトを見る',
+      close: '閉じる',
+      venture: 'L-VENTURES',
+    };
 ---
 
 <section class="partner section-gray" id="partner" aria-labelledby="ecosystem-title">
@@ -98,13 +157,14 @@ const labels = isEnglish
     <p class="eyebrow">{labels.eyebrow}</p>
     <h2 class="section-title" id="ecosystem-title">{labels.title}</h2>
     <p class="partner__lead">{labels.lead}</p>
+    <p class="partner__context">{labels.context}</p>
     <div class="partner-grid partner-grid--unified">
       {partners.map((partner) => {
         const dialogId = `partner-detail-${partner.id}-${lang}`;
         return (
           <article class="partner-card">
-            <div class="partner-card__tags" aria-label={isEnglish ? 'Partner categories' : 'パートナーの種別'}>
-              <span class="partner-tag">{partner.category}</span>
+            <div class="partner-card__tags" aria-label={isEnglish ? 'Company tags' : '企業タグ'}>
+              {partner.category && <span class="partner-tag">{partner.category}</span>}
               {partner.lVenturesUrl && (
                 <a class="partner-tag partner-tag--ventures" href={partner.lVenturesUrl} target="_blank" rel="noreferrer">
                   {labels.venture}
