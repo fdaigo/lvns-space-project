@@ -222,7 +222,7 @@ const labels = isEnglish
       title: 'ECOSYSTEM',
       eyebrow: 'OUR ECOSYSTEM',
       lead: '宇宙の未来を、ともにつくる。',
-      context: '宇宙に関わる企業と、LVNS SPACE PROJECTのパートナーを紹介します。タグで各社の立場をご確認ください。',
+      context: '宇宙に研究所をつくることは、1社だけでは実現できません。リバネスグループとその仲間であるベンチャー・中小企業・大手企業が力を合わせ、新しい世界を切り拓きます。ここでは、L-VENTURESが支援する宇宙関連企業と、LVNS SPACE PROJECTの公式パートナーをご紹介します。',
       details: '会社紹介',
       role: 'プロジェクトでの関わり',
       website: '公式Webサイトを見る',
@@ -236,7 +236,6 @@ const tagGuide = isEnglish
       { tag: 'Operating Partner', copy: 'Supports the project’s operations and research-lab development.' },
       { tag: 'Development Partner', copy: 'Develops new technologies and businesses for space.' },
       { tag: 'Platform Partner', copy: 'Connects research with access to space and related services.' },
-      { tag: 'Other', copy: 'Space-related company with no designated project-partner role.' },
       { tag: 'L-VENTURES', copy: 'Featured by L-VENTURES; this tag alone does not mean project participation.' },
     ]
   : [
@@ -244,7 +243,6 @@ const tagGuide = isEnglish
       { tag: '運営パートナー', copy: '研究所の立ち上げやプロジェクト運営を支えます。' },
       { tag: '開発パートナー', copy: '宇宙分野の新しい技術・事業を開発します。' },
       { tag: 'プラットフォームパートナー', copy: '研究と宇宙へのアクセス・利用機会をつなぎます。' },
-      { tag: 'その他', copy: '宇宙関連企業のうち、本プロジェクトの役割を定めていない企業です。' },
       { tag: 'L-VENTURES', copy: 'L-VENTURES掲載企業を示すタグで、プロジェクト参画を示すものではありません。' },
     ];
 ---
@@ -257,7 +255,7 @@ const tagGuide = isEnglish
     <p class="partner__context">{labels.context}</p>
     <div class="partner-tag-guide" aria-label={isEnglish ? 'Tag descriptions' : 'タグの説明'}>
       {tagGuide.map((item) => (
-        <p class="partner-tag-guide__row"><span class="partner-tag">{item.tag}</span><span>{item.copy}</span></p>
+        <p class="partner-tag-guide__row"><span class={item.tag === 'L-VENTURES' ? 'partner-tag partner-tag--ventures' : 'partner-tag'}>{item.tag}</span><span>{item.copy}</span></p>
       ))}
     </div>
     <div class="partner-grid partner-grid--unified">
