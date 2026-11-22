@@ -164,7 +164,7 @@ const partners: Partner[] = [
     id: 'outsense',
     name: isEnglish ? 'OUTSENSE Inc.' : '株式会社OUTSENSE',
     spaceRole: isEnglish ? 'Applies origami engineering to deployable structures for space.' : '折り工学を応用し、宇宙で使う展開構造物を開発します。',
-    logo: '/images/partners/outsense.webp',
+    logo: '/images/partners/outsense.png',
     category: isEnglish ? 'Operating Partner' : '運営パートナー',
     intro: isEnglish
       ? 'OUTSENSE applies origami engineering to structural challenges in space, architecture, and manufacturing.'
@@ -262,7 +262,7 @@ const tagGuide = isEnglish
       {partners.map((partner) => {
         const dialogId = `partner-detail-${partner.id}-${lang}`;
         return (
-          <article class="partner-card">
+          <article class="partner-card" data-partner={partner.id}>
             <div class="partner-card__tags" aria-label={isEnglish ? 'Company tags' : '企業タグ'}>
               {partner.category && <span class="partner-tag">{partner.category}</span>}
               {partner.lVenturesUrl && (
