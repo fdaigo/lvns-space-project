@@ -210,6 +210,13 @@ button { font: inherit; }
 .partner { padding: 104px 0 125px; text-align: center; }
 .partner__lead { margin: 46px 0 0; font-size: 28px; font-weight: 500; }
 .partner__context { max-width: 850px; margin: 22px auto 0; color: #555; font-size: 14px; line-height: 2; text-align: left; }
+
+.partner-tag-guide { width: min(850px, 100%); margin: 30px auto 0; border-top: 1px solid #d8d9eb; text-align: left; }
+.partner-tag-guide__row { display: grid; grid-template-columns: minmax(185px, 0.34fr) 1fr; align-items: center; gap: 18px; margin: 0; padding: 10px 8px; border-bottom: 1px solid #d8d9eb; color: #45455a; font-size: 13px; line-height: 1.65; }
+.partner-tag-guide__row .partner-tag { justify-self: start; }
+.partner-card__name { min-height: 0; padding-bottom: 7px; }
+.partner-card__summary { min-height: 58px; margin: 0; padding: 0 14px 18px; color: #555; font-size: 12px; line-height: 1.7; }
+.partner-organizer__summary { max-width: 520px; margin: 9px auto 0; color: #555; font-size: 13px; line-height: 1.7; }
 .partner-note { width: min(710px, 100%); margin: 0 auto; padding: 35px 45px; background: rgba(255, 255, 255, .65); text-align: left; }
 .partner-note p { margin: 0 0 22px; font-size: 15px; }
 .partner-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
@@ -405,6 +412,10 @@ button { font: inherit; }
   .section-heading-row { align-items: start; flex-direction: column; gap: 25px; margin-bottom: 45px; }
   .partner__lead { margin: 34px 0 0; font-size: 21px; }
   .partner__context { font-size: 13px; }
+  .partner-tag-guide { margin-top: 25px; }
+  .partner-tag-guide__row { grid-template-columns: minmax(130px, .42fr) 1fr; gap: 10px; padding: 9px 4px; font-size: 11px; }
+  .partner-card__summary { min-height: 74px; padding: 0 8px 14px; font-size: 11px; }
+  .partner-organizer__summary { font-size: 12px; }
   .partner-grid--unified { gap: 12px; margin: 38px 0 45px; }
   .partner-card__tags { min-height: 54px; padding-right: 5px; padding-left: 5px; }
   .partner-tag { padding: 2px 7px; font-size: 9px; }

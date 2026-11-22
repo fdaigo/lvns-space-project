@@ -9,6 +9,7 @@ interface Partner {
   logo: string;
   category?: string;
   intro: string;
+  spaceRole: string;
   involvement: string;
   website: string;
   lVenturesUrl?: string;
@@ -21,6 +22,7 @@ const partners: Partner[] = [
   {
     id: 'iddk',
     name: isEnglish ? 'IDDK Co., Ltd.' : '株式会社IDDK',
+    spaceRole: isEnglish ? 'Compact observation technologies support measurement and research in space.' : '小型観察技術で、宇宙実験の計測・観察を支えます。',
     logo: '/images/partners/iddk.jpg',
     category: isEnglish ? 'Operating Partner' : '運営パートナー',
     intro: isEnglish
@@ -35,6 +37,7 @@ const partners: Partner[] = [
   {
     id: 'spacenome',
     name: isEnglish ? 'SpaceNome Lab, Inc.' : '株式会社スペースノーム研究所',
+    spaceRole: isEnglish ? 'Develops research themes and experimental systems using the space environment.' : '宇宙環境を活かした研究テーマと実験系をつくります。',
     logo: '/images/partners/space-nome-lab.png',
     category: isEnglish ? 'Operating Partner' : '運営パートナー',
     intro: isEnglish
@@ -48,97 +51,105 @@ const partners: Partner[] = [
   {
     id: 'elevation-space',
     name: isEnglish ? 'ElevationSpace Inc.' : '株式会社ElevationSpace',
+    spaceRole: isEnglish ? 'Develops spacecraft and return systems for experiments conducted in orbit.' : '宇宙機と回収技術で、軌道上実験を地上へつなぎます。',
     logo: '/images/partners/elevation-space.webp',
     intro: isEnglish
       ? 'ElevationSpace is developing spacecraft and in-orbit platforms that enable experiments in space and the return of their results to Earth.'
       : '宇宙機や軌道上実験プラットフォームの開発を通じ、宇宙での実験と成果の地上回収を目指す企業です。',
     involvement: isEnglish
-      ? 'Listed here as a space-related company featured by L-VENTURES. No separate partner role in LVNS SPACE PROJECT is currently designated.'
-      : 'L-VENTURESに掲載されている宇宙関連企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+      ? 'Introduced as a company featured by L-VENTURES with relevance to space-related business. It is not currently participating as an individual partner in LVNS SPACE PROJECT.'
+      : '宇宙事業に関連するL-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画はしておりません。',
     website: 'https://elevation-space.com/',
     lVenturesUrl: 'https://ventures.lne.st/ventures/elevation-space/',
   },
   {
     id: 'solafune',
     name: isEnglish ? 'Solafune, Inc.' : '株式会社Solafune',
+    spaceRole: isEnglish ? 'Uses satellite data and AI to expand Earth-observation applications.' : '衛星データとAIで、地球観測の活用を広げます。',
     logo: '/images/partners/solafune.webp',
     intro: isEnglish
       ? 'Solafune develops satellite imagery analysis and AI platforms to connect geospatial data with real-world challenges.'
       : '衛星画像解析やAIの基盤を通じて、衛星データと社会・産業の課題をつなぐ企業です。',
     involvement: isEnglish
-      ? 'Listed here as a space-related company featured by L-VENTURES. No separate partner role in LVNS SPACE PROJECT is currently designated.'
-      : 'L-VENTURESに掲載されている宇宙関連企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+      ? 'Introduced as a company featured by L-VENTURES with relevance to space-related business. It is not currently participating as an individual partner in LVNS SPACE PROJECT.'
+      : '宇宙事業に関連するL-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画はしておりません。',
     website: 'https://solafune.com/',
     lVenturesUrl: 'https://ventures.lne.st/ventures/solafune/',
   },
   {
     id: 'sagri',
     name: isEnglish ? 'Sagri Co., Ltd.' : 'サグリ株式会社',
+    spaceRole: isEnglish ? 'Applies satellite data to challenges in agriculture and the environment.' : '衛星データを活用し、農業や環境の課題解決に取り組みます。',
     logo: '/images/partners/sagri.webp',
     intro: isEnglish
       ? 'Sagri uses satellite data and AI to support agriculture, land management, and environmental decision-making.'
       : '衛星データとAIを活用し、農地把握や土壌分析、環境・地域課題の解決に取り組む企業です。',
     involvement: isEnglish
-      ? 'Listed here as a space-related company featured by L-VENTURES. No separate partner role in LVNS SPACE PROJECT is currently designated.'
-      : 'L-VENTURESに掲載されている宇宙関連企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+      ? 'Introduced as a company featured by L-VENTURES with relevance to space-related business. It is not currently participating as an individual partner in LVNS SPACE PROJECT.'
+      : '宇宙事業に関連するL-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画はしておりません。',
     website: 'https://sagri.tokyo/',
     lVenturesUrl: 'https://ventures.lne.st/ventures/sagri/',
   },
   {
     id: 'tenchijin',
     name: isEnglish ? 'Tenchijin, Inc.' : '株式会社天地人',
+    spaceRole: isEnglish ? 'Turns satellite-derived geospatial information into practical applications.' : '衛星データで、地理空間情報の社会実装を進めます。',
     logo: '/images/partners/tenchijin.webp',
     intro: isEnglish
       ? 'Tenchijin combines satellite remote sensing and ground data to address geospatial challenges in infrastructure, agriculture, cities, and the environment.'
       : '衛星リモートセンシングと地上データを組み合わせ、インフラ、農業、都市、環境などの地理空間課題に取り組む企業です。',
     involvement: isEnglish
-      ? 'Listed here as a space-related company featured by L-VENTURES. No separate partner role in LVNS SPACE PROJECT is currently designated.'
-      : 'L-VENTURESに掲載されている宇宙関連企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+      ? 'Introduced as a company featured by L-VENTURES with relevance to space-related business. It is not currently participating as an individual partner in LVNS SPACE PROJECT.'
+      : '宇宙事業に関連するL-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画はしておりません。',
     website: 'https://tenchijin.co.jp/',
     lVenturesUrl: 'https://ventures.lne.st/ventures/tenchijin/',
   },
   {
     id: 'plantex',
     name: isEnglish ? 'PLANTX Corp.' : '株式会社プランテックス',
+    spaceRole: isEnglish ? 'Develops controlled-environment plant production technologies.' : '植物工場技術で、環境を制御した植物生産に取り組みます。',
     logo: 'https://www.j-startup.go.jp/en/startups/images/sta_175.png',
     intro: isEnglish
       ? 'PLANTX plans, builds, and supports the operation of artificial-light plant factories, and researches plant cultivation conditions.'
       : '人工光型植物工場の企画・設立・運営支援や、植物の栽培条件に関する研究などに取り組む企業です。',
     involvement: isEnglish
-      ? 'Listed as an L-VENTURES company. No separate partner role in LVNS SPACE PROJECT is currently designated.'
-      : 'L-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+      ? 'Introduced as a company featured by L-VENTURES with relevance to space-related business. It is not currently participating as an individual partner in LVNS SPACE PROJECT.'
+      : '宇宙事業に関連するL-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画はしておりません。',
     website: 'https://www.plantx.co.jp/',
     lVenturesUrl: 'https://ventures.lne.st/ventures/plantex/',
   },
   {
     id: 'integriculture',
     name: isEnglish ? 'Integriculture Inc.' : 'インテグリカルチャー株式会社',
+    spaceRole: isEnglish ? 'Develops cell-cultivation technology for cellular agriculture.' : '細胞培養技術を開発し、細胞農業の実用化を目指します。',
     logo: 'https://prtimes.jp/data/corp/34252/ogp/c0d1119d0cfe0b4515180e083263ef31-73e9e2bf210eb3964ebca69d33266e14.png',
     intro: isEnglish
       ? 'Integriculture develops cell-cultivation technologies and production infrastructure for cellular agriculture, including food, cosmetics, and biomaterials.'
       : '細胞培養技術と生産インフラの開発を通じ、培養食品・化粧品・バイオ素材など細胞農業の実用化を目指す企業です。',
     involvement: isEnglish
-      ? 'Listed as an L-VENTURES company. No separate partner role in LVNS SPACE PROJECT is currently designated.'
-      : 'L-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+      ? 'Introduced as a company featured by L-VENTURES with relevance to space-related business. It is not currently participating as an individual partner in LVNS SPACE PROJECT.'
+      : '宇宙事業に関連するL-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画はしておりません。',
     website: 'https://integriculture.com/',
     lVenturesUrl: 'https://ventures.lne.st/ventures/integriculture/',
   },
   {
     id: 'japan-moss-factory',
     name: isEnglish ? 'Japan Moss Factory Co., Ltd.' : '株式会社ジャパンモスファクトリー',
+    spaceRole: isEnglish ? 'Applies moss-based technologies to environmental improvement and greening.' : '苔を活かした環境技術で、水質改善や緑化に取り組みます。',
     logo: 'https://jmf.co.jp/wp-content/uploads/2020/06/JMFlogo-300x49.png',
     intro: isEnglish
       ? 'Japan Moss Factory develops moss-based materials and products for environmental applications such as water-quality improvement and greening.'
       : '苔を素材として活用し、水質環境の改善や緑化など、環境分野への応用を目指す企業です。',
     involvement: isEnglish
-      ? 'Listed as an L-VENTURES company. No separate partner role in LVNS SPACE PROJECT is currently designated.'
-      : 'L-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画は設定されていません。',
+      ? 'Introduced as a company featured by L-VENTURES with relevance to space-related business. It is not currently participating as an individual partner in LVNS SPACE PROJECT.'
+      : '宇宙事業に関連するL-VENTURESに掲載されている企業として紹介しています。現時点で、LVNS SPACE PROJECTにおける個別のパートナー参画はしておりません。',
     website: 'https://jmf.co.jp/',
     lVenturesUrl: 'https://ventures.lne.st/ventures/japan-moss-factory/',
   },
   {
     id: 'minato-rocket',
     name: isEnglish ? 'Minato Rocket Co., Ltd.' : 'みなとロケット株式会社',
+    spaceRole: isEnglish ? 'Develops rockets and launch services for access to space.' : 'ロケット開発と打ち上げサービスで、宇宙への輸送を担います。',
     logo: '/images/partners/minato-rocket.png',
     category: isEnglish ? 'Platform Partner' : 'プラットフォームパートナー',
     intro: isEnglish
@@ -152,6 +163,7 @@ const partners: Partner[] = [
   {
     id: 'outsense',
     name: isEnglish ? 'OUTSENSE Inc.' : '株式会社OUTSENSE',
+    spaceRole: isEnglish ? 'Applies origami engineering to deployable structures for space.' : '折り工学を応用し、宇宙で使う展開構造物を開発します。',
     logo: '/images/partners/outsense.webp',
     category: isEnglish ? 'Operating Partner' : '運営パートナー',
     intro: isEnglish
@@ -166,6 +178,7 @@ const partners: Partner[] = [
   {
     id: 'hasetora',
     name: isEnglish ? 'Hasetora Spinning Co., Ltd.' : '長谷虎紡績株式会社',
+    spaceRole: isEnglish ? 'Applies textile expertise to materials designed for the space environment.' : '繊維技術を活かし、宇宙環境で機能する素材を開発します。',
     logo: '/images/partners/hasetora-spinning.png',
     category: isEnglish ? 'Development Partner' : '開発パートナー',
     intro: isEnglish
@@ -190,6 +203,7 @@ const organizer: Partner = {
     ? 'As the project organizer, Leave a Nest designs and coordinates the project and connects research themes, companies, researchers, and technologies.'
     : 'プロジェクトを企画・運営し、研究テーマ、企業、研究者、技術の連携を促進します。',
   website: 'https://lne.st/',
+  spaceRole: isEnglish ? 'Connects researchers and companies to build the foundations for space research.' : '研究者と企業をつなぎ、宇宙研究の仕組みづくりを進めます。',
 };
 
 const labels = isEnglish
@@ -197,7 +211,7 @@ const labels = isEnglish
       title: 'ECOSYSTEM',
       eyebrow: 'OUR ECOSYSTEM',
       lead: 'Let us build the future of space together.',
-      context: 'This section introduces space-related companies connected with the Leave a Nest Group. Within LVNS SPACE PROJECT, designated partners collaborate to establish the research laboratory: Operating Partners lead technology development for its establishment, Development Partners create new space businesses, and Platform Partners connect space with Earth to expand our activities. The L-VENTURES tag identifies companies featured by L-VENTURES; it does not by itself indicate participation as a project partner.',
+      context: 'This section introduces space-related companies connected with the Leave a Nest Group. Within LVNS SPACE PROJECT, designated partners collaborate to establish the research laboratory: Operating Partners lead technology development for its establishment, Development Partners create new space businesses, and Platform Partners connect space with Earth to expand our activities. L-VENTURES identifies companies featured by that organization; it does not mean they are LVNS SPACE PROJECT partners.',
       details: 'Company profile',
       role: 'Project involvement',
       website: 'Visit official website',
@@ -208,13 +222,31 @@ const labels = isEnglish
       title: 'ECOSYSTEM',
       eyebrow: 'OUR ECOSYSTEM',
       lead: '宇宙の未来を、ともにつくる。',
-      context: 'リバネスグループとつながりのある、宇宙関連企業を紹介しています。LVNS SPACE PROJECTでは、研究所設立に向けた技術開発を担う運営パートナー、新たな宇宙事業を開発する開発パートナー、宇宙と地球をつなぐプラットフォームパートナーと連携し、活動を広げていきます。各社のタグで、本プロジェクトにおけるパートナーとしての立場をご確認いただけます。L-VENTURESタグは同サイトで紹介されている企業を示すもので、それだけで本プロジェクトへの参画を示すものではありません。',
+      context: '宇宙に関わる企業と、LVNS SPACE PROJECTのパートナーを紹介します。タグで各社の立場をご確認ください。',
       details: '会社紹介',
       role: 'プロジェクトでの関わり',
       website: '公式Webサイトを見る',
       close: '閉じる',
       venture: 'L-VENTURES',
     };
+
+const tagGuide = isEnglish
+  ? [
+      { tag: 'Organizer', copy: 'Plans and coordinates LVNS SPACE PROJECT.' },
+      { tag: 'Operating Partner', copy: 'Supports the project’s operations and research-lab development.' },
+      { tag: 'Development Partner', copy: 'Develops new technologies and businesses for space.' },
+      { tag: 'Platform Partner', copy: 'Connects research with access to space and related services.' },
+      { tag: 'Other', copy: 'Space-related company with no designated project-partner role.' },
+      { tag: 'L-VENTURES', copy: 'Featured by L-VENTURES; this tag alone does not mean project participation.' },
+    ]
+  : [
+      { tag: 'オーガナイザー', copy: 'プロジェクト全体を企画・運営します。' },
+      { tag: '運営パートナー', copy: '研究所の立ち上げやプロジェクト運営を支えます。' },
+      { tag: '開発パートナー', copy: '宇宙分野の新しい技術・事業を開発します。' },
+      { tag: 'プラットフォームパートナー', copy: '研究と宇宙へのアクセス・利用機会をつなぎます。' },
+      { tag: 'その他', copy: '宇宙関連企業のうち、本プロジェクトの役割を定めていない企業です。' },
+      { tag: 'L-VENTURES', copy: 'L-VENTURES掲載企業を示すタグで、プロジェクト参画を示すものではありません。' },
+    ];
 ---
 
 <section class="partner section-gray" id="partner" aria-labelledby="ecosystem-title">
@@ -223,6 +255,11 @@ const labels = isEnglish
     <h2 class="section-title" id="ecosystem-title">{labels.title}</h2>
     <p class="partner__lead">{labels.lead}</p>
     <p class="partner__context">{labels.context}</p>
+    <div class="partner-tag-guide" aria-label={isEnglish ? 'Tag descriptions' : 'タグの説明'}>
+      {tagGuide.map((item) => (
+        <p class="partner-tag-guide__row"><span class="partner-tag">{item.tag}</span><span>{item.copy}</span></p>
+      ))}
+    </div>
     <div class="partner-grid partner-grid--unified">
       {partners.map((partner) => {
         const dialogId = `partner-detail-${partner.id}-${lang}`;
@@ -241,6 +278,7 @@ const labels = isEnglish
               <span class="sr-only">{isEnglish ? `View ${partner.name} profile` : `${partner.name}の紹介を表示`}</span>
             </button>
             <h3 class="partner-card__name">{partner.name}</h3>
+            <p class="partner-card__summary">{partner.spaceRole}</p>
             <dialog class="partner-dialog" id={dialogId} aria-labelledby={`${dialogId}-title`}>
               <div class="partner-dialog__panel" lang={isEnglish ? 'en' : 'ja'}>
                 <button class="partner-dialog__close" type="button" aria-label={labels.close} data-partner-close>×</button>
@@ -265,6 +303,7 @@ const labels = isEnglish
         <span class="sr-only">{isEnglish ? `View ${organizer.name} profile` : `${organizer.name}の紹介を表示`}</span>
       </button>
       <h3 class="partner-organizer__name" id={`organizer-name-${lang}`}>{organizer.name}</h3>
+      <p class="partner-organizer__summary">{organizer.spaceRole}</p>
       <dialog class="partner-dialog" id={`organizer-detail-${lang}`} aria-labelledby={`organizer-detail-title-${lang}`}>
         <div class="partner-dialog__panel" lang={isEnglish ? 'en' : 'ja'}>
           <button class="partner-dialog__close" type="button" aria-label={labels.close} data-partner-close>×</button>
