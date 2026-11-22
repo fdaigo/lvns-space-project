@@ -3,6 +3,7 @@ title: OUTSENSEがLVNS SPACE PROJECTの運営パートナーに参画
 description: OUTSENSEが運営パートナーとしてLVNS SPACE PROJECTに参画しました。
 pubDate: 2026-11-20
 updatedDate: 2026-11-20
+heroImage: /images/news/outsense-lvns-partner.svg
 tags:
   - Release
   - Partner
