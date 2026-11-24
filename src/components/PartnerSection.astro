@@ -13,6 +13,7 @@ interface Partner {
   involvement: string;
   website: string;
   lVenturesUrl?: string;
+  sourceUrl?: string;
 }
 
 const { lang = 'ja' } = Astro.props;
@@ -178,16 +179,17 @@ const partners: Partner[] = [
   {
     id: 'pittan',
     name: isEnglish ? 'PITTAN, Inc.' : '株式会社PITTAN',
-    spaceRole: isEnglish ? 'Proposed compact liquid chromatography for space through the SpaLCe team.' : 'S-Booster 2022で「SpaLCe」として、超小型液体クロマトグラフィーを提案。',
+    spaceRole: isEnglish ? 'Proposed a compact modular analyzer using trace components obtained from the human body.' : 'ヒトから得られる微量成分を活用して、小型ユニット式の分析装置を開発する構想です。',
     logo: '/images/partners/pittan.jpg',
     category: isEnglish ? 'Operating Partner' : '運営パートナー',
     intro: isEnglish
-      ? 'PITTAN develops healthcare services using analytical chemistry and trace-component analysis. In S-Booster 2022, its SpaLCe team proposed “Eki-kuro 5.0” and received the Sony Group Award and NEDO Award.'
-      : '汗中の微量成分分析技術を活用したヘルスケアサービスを開発する企業です。S-Booster 2022では「SpaLCe」チームとして「えきくろ5.0」を提案し、ソニーグループ賞・NEDO賞を受賞しました。',
+      ? 'PITTAN’s SpaLCe team proposed “Eki-kuro 5.0: Evolution of ultra-compact liquid chromatography” at S-Booster 2022, receiving the Sony Group Award and NEDO Award.'
+      : 'S-Booster 2022では、PITTANの「SpaLCe」チームが「えきくろ5.0〜超小型液体クロマトグラフィーの進化〜」を提案し、ソニーグループ賞・NEDO賞を受賞しました。',
     involvement: isEnglish
       ? 'As an operating partner, PITTAN participates in the planning and operation of LVNS SPACE PROJECT.'
       : '運営パートナーとして、LVNS SPACE PROJECTの企画・運営に参画します。',
     website: 'https://www.pittan.life/',
+    sourceUrl: 'https://www8.cao.go.jp/space/s-net/s-booster/2022/s-booster_link.html',
   },
   {
     id: 'hasetora',
@@ -299,9 +301,16 @@ const tagGuide = isEnglish
                 <p class="partner-dialog__copy">{partner.intro}</p>
                 <h4>{labels.role}</h4>
                 <p class="partner-dialog__copy">{partner.involvement}</p>
-                <a class="partner-dialog__link" href={partner.website} target="_blank" rel="noreferrer">
-                  {labels.website} <span aria-hidden="true">↗</span>
-                </a>
+                <div class="partner-dialog__links">
+                  {partner.sourceUrl && (
+                    <a class="partner-dialog__link" href={partner.sourceUrl} target="_blank" rel="noreferrer">
+                      {isEnglish ? 'S-Booster 2022 results (Cabinet Office)' : 'S-Booster 2022の紹介（内閣府）'} <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                  <a class="partner-dialog__link" href={partner.website} target="_blank" rel="noreferrer">
+                    {labels.website} <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
               </div>
             </dialog>
           </article>

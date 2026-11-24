@@ -249,6 +249,8 @@ button { font: inherit; }
 .partner-dialog__copy { margin: 0; font-size: 15px; line-height: 1.9; }
 .partner-dialog__link { display: inline-flex; align-items: center; gap: 12px; margin-top: 30px; padding: 10px 16px; color: var(--white); background: var(--purple); font-size: 14px; }
 .partner-dialog__link:hover { background: var(--blue-dark); }
+.partner-dialog__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.partner-dialog__links .partner-dialog__link { margin-top: 0; }
 
 .contact { position: relative; min-height: 418px; overflow: hidden; color: var(--white); background: url('https://space.lne.st/wp-content/themes/lnest_space/images/common/contact__bg.jpg') center / cover; }
 .contact__overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, .42); }
