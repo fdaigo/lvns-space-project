@@ -10,7 +10,7 @@ const posts = sortNewsByNewest(await getCollection('news', ({ data }) => !data.d
 <BaseLayout lang="en" title="News" description="The latest news from LVNS SPACE PROJECT">
   <section class="listing-page">
     <div class="content-inner">
-      <header class="page-heading page-heading--compact"><p class="eyebrow">LVNS SPACE PROJECT</p><h1>NEWS</h1><p>Updates from the project</p></header>
+      <header class="page-heading page-heading--compact"><h1>NEWS</h1><p>Updates from the project</p></header>
       <div class="news-list">
         {posts.map((post) => {
           const translation = getEnglishNews(post);

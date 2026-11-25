@@ -224,8 +224,7 @@ const organizer: Partner = {
 
 const labels = isEnglish
   ? {
-      title: 'ECOSYSTEM',
-      eyebrow: 'OUR ECOSYSTEM',
+      title: 'TEAM',
       lead: 'Let us build the future of space together.',
       context: 'This section introduces space-related companies connected with the Leave a Nest Group. Within LVNS SPACE PROJECT, designated partners collaborate to establish the research laboratory: Operating Partners lead technology development for its establishment, Development Partners create new space businesses, and Platform Partners connect space with Earth to expand our activities. L-VENTURES identifies companies featured by that organization; it does not mean they are LVNS SPACE PROJECT partners.',
       details: 'Company profile',
@@ -235,8 +234,7 @@ const labels = isEnglish
       venture: 'L-VENTURES',
     }
   : {
-      title: 'ECOSYSTEM',
-      eyebrow: 'OUR ECOSYSTEM',
+      title: 'TEAM',
       lead: '宇宙の未来を、ともにつくる。',
       context: '宇宙に研究所をつくることは、1社だけでは実現できません。リバネスグループとその仲間であるベンチャー・中小企業・大手企業が力を合わせ、新しい世界を切り拓きます。ここでは、L-VENTURESが支援する宇宙関連企業と、LVNS SPACE PROJECTの公式パートナーをご紹介します。',
       details: '会社紹介',
@@ -263,10 +261,9 @@ const tagGuide = isEnglish
     ];
 ---
 
-<section class="partner section-gray" id="partner" aria-labelledby="ecosystem-title">
+<section class="partner section-gray" id="partner" aria-labelledby="team-title">
   <div class="content-inner">
-    <p class="eyebrow">{labels.eyebrow}</p>
-    <h2 class="section-title" id="ecosystem-title">{labels.title}</h2>
+    <h2 class="section-title" id="team-title">{labels.title}</h2>
     <p class="partner__lead">{labels.lead}</p>
     <p class="partner__context">{labels.context}</p>
     <div class="partner-tag-guide" aria-label={isEnglish ? 'Tag descriptions' : 'タグの説明'}>

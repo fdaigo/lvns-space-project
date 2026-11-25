@@ -13,7 +13,6 @@ type ApproachCard = {
 
 type Props = {
   locale: 'ja' | 'en';
-  sectionLabel: string;
   title: string;
   subtitle: string;
   intro: string[];
@@ -29,7 +28,6 @@ type Props = {
 
 const {
   locale,
-  sectionLabel,
   title,
   subtitle,
   intro,
@@ -47,7 +45,6 @@ const approachHref = (slug: string) => `${locale === 'en' ? '/en' : ''}/approach
 
 <section class="approach section-gray" id="approach" aria-labelledby="approach-title">
   <div class="content-inner">
-    <p class="eyebrow">{sectionLabel}</p>
     <h2 class="section-title" id="approach-title">{title}</h2>
     <p class="approach__subtitle">{subtitle}</p>
     <div class="approach__intro">

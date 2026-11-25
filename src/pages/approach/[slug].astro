@@ -47,7 +47,6 @@ const nextHref = approach.next ? `/approach/${approach.next.slug}/` : '/#approac
 
     <section class="approach-detail__process" aria-labelledby="process-title">
       <div class="content-inner">
-        <p class="eyebrow">HOW WE PROCEED</p>
         <h2 class="section-title" id="process-title">PROCESS</h2>
         <ol class="approach-process">
           {approach.process.map((step, index) => (
@@ -62,7 +61,6 @@ const nextHref = approach.next ? `/approach/${approach.next.slug}/` : '/#approac
 
     <section class="approach-detail__examples section-gray" aria-labelledby="examples-title">
       <div class="content-inner">
-        <p class="eyebrow">IN PRACTICE</p>
         <h2 class="section-title" id="examples-title">{approach.examplesTitle}</h2>
         <ul class="approach-examples">
           {approach.examples.map((example, index) => (

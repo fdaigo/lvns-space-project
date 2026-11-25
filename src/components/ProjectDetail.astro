@@ -33,7 +33,6 @@ const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
 
   <section class="project-detail__steps" aria-labelledby="project-steps-title">
     <div class="content-inner">
-      <p class="eyebrow">{isEnglish ? 'WHAT WE WILL DO' : 'WHAT WE DO'}</p>
       <h2 class="section-title" id="project-steps-title">{project.stepsTitle}</h2>
       <div class="project-step-list">
         {project.steps.map((step) => (
@@ -55,7 +54,6 @@ const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
 
   <section class="project-detail__team section-gray" aria-labelledby="project-team-title">
     <div class="content-inner">
-      <p class="eyebrow">PROJECT TEAM</p>
       <h2 class="section-title" id="project-team-title">{isEnglish ? 'The team behind the project' : 'プロジェクトチーム'}</h2>
       <p class="project-detail__team-intro">{project.teamIntro}</p>
       <div class="project-team-grid">
