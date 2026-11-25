@@ -34,7 +34,7 @@ export type ProjectPage = {
 export const projects: ProjectPage[] = [
   {
     slug: 'gravity-life-research',
-    name: '重力外生命研究プロジェクト',
+    name: '重力外生命研究',
     englishName: 'Life Beyond Gravity Research Project',
     eyebrow: 'SPACE BIO / RESEARCH & EDUCATION',
     catchphrase: '微細藻類を通じて、重力の外側にある生命のふるまいを探る。',

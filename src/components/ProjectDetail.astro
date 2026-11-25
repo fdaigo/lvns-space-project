@@ -9,7 +9,7 @@ type Props = {
 const { project, locale = 'ja' } = Astro.props;
 const isEnglish = locale === 'en';
 const backHref = isEnglish ? '/en/#project' : '/#project';
-const backLabel = isEnglish ? '← ALL PROJECTS' : '← PROJECTS一覧';
+const backLabel = isEnglish ? '← ALL CASES' : '← CASE一覧';
 const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
 ---
 
@@ -18,7 +18,7 @@ const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
     <div class="content-inner project-detail__hero-inner">
       <div class="project-detail__copy">
         <a class="back-link" href={backHref}>{backLabel}</a>
-        <p class="project-detail__index">PROJECT <span>/</span> 01</p>
+        <p class="project-detail__index">CASE <span>/</span> 01</p>
         <h1 id="project-detail-title">{project.name}</h1>
         <p class="project-detail__english-name">{project.englishName}</p>
         <h2>{project.catchphrase}</h2>
@@ -74,7 +74,7 @@ const sourceLabel = isEnglish ? project.sourceLabel : project.sourceLabel;
     <div class="content-inner">
       <p>{project.closing}</p>
       <a class="project-detail__source" href={project.sourceUrl} target="_blank" rel="noreferrer">{sourceLabel} <span>↗</span></a>
-      <a class="project-detail__back" href={backHref}>{isEnglish ? 'BACK TO PROJECTS' : 'PROJECTSへ戻る'} <span>↗</span></a>
+      <a class="project-detail__back" href={backHref}>{isEnglish ? 'BACK TO CASES' : 'CASEへ戻る'} <span>↗</span></a>
     </div>
   </section>
 </div>

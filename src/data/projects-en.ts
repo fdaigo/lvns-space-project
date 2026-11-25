@@ -3,8 +3,8 @@ import type { ProjectPage } from './projects';
 export const projectsEn: ProjectPage[] = [
   {
     slug: 'gravity-life-research',
-    name: 'Life Beyond Gravity Research Project',
-    englishName: '重力外生命研究プロジェクト',
+    name: 'Life Beyond Gravity Research',
+    englishName: '重力外生命研究',
     eyebrow: 'SPACE BIO / RESEARCH & EDUCATION',
     catchphrase: 'Explore how life behaves beyond gravity through microalgae.',
     summary: 'A compact cell-culture unit will fly on the Aoba satellite developed by ElevationSpace Inc. to observe the microalga Euglena in microgravity. The project combines space experiments, Earth-based analysis, and a research-and-education program developed with the next generation, especially middle and high school students.',
