@@ -15,7 +15,7 @@ interface Props {
 const {
   title = 'LVNS SPACE PROJECT',
   description = '宇宙を使って、延長線上にない工学を発見する。',
-  image = 'https://space.lne.st/wp-content/themes/lnest_space/images/top/fva@2x.jpg',
+  image = '/images/og/lvns-space-project-og-2026.jpg',
   type = 'website',
   lang = 'ja',
 } = Astro.props;
@@ -46,10 +46,14 @@ const fullTitle = title === 'LVNS SPACE PROJECT' ? title : title + ' | LVNS SPAC
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={imageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LVNS SPACE PROJECT - 宇宙を使って、延長線上にない工学を発見する。" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageURL} />
+    <meta name="twitter:image:alt" content="LVNS SPACE PROJECT - 宇宙を使って、延長線上にない工学を発見する。" />
   </head>
   <body>
     <Header lang={lang} />
