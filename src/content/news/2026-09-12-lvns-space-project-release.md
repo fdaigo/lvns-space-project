@@ -3,7 +3,7 @@ title: リバネス、宇宙で新たな工学を発見する「LVNS SPACE PROJE
 description: スペースノーム研究所・IDDKを運営パートナーに、長谷虎紡績と「宇宙環境で働くスマートテキスタイル」の共同開発を開始します。
 pubDate: 2026-09-12
 updatedDate: 2026-09-12
-heroImage: /images/news/lvns-space-project-release.png
+heroImage: /images/news/lvns-space-project-release-2026.png
 tags:
   - Release
   - Project
