@@ -8,6 +8,7 @@ interface Partner {
   name: string;
   logo: string;
   category?: string;
+  knowledgeCoreUrl?: string;
   intro: string;
   spaceRole: string;
   involvement: string;
@@ -197,6 +198,7 @@ const partners: Partner[] = [
     spaceRole: isEnglish ? 'Applies textile expertise to materials designed for the space environment.' : '繊維技術を活かし、宇宙環境で機能する素材を開発します。',
     logo: '/images/partners/hasetora-spinning.png',
     category: isEnglish ? 'Development Partner' : '開発パートナー',
+    knowledgeCoreUrl: 'https://lne.st/2026/04/28/iknc/',
     intro: isEnglish
       ? 'Founded in 1887, Hasetora Spinning is a textile manufacturer working across yarn, spinning, and fabric technologies.'
       : '1887年創業の紡績・繊維メーカー。繊維素材と紡績・撚糸・織編の技術を軸にものづくりに取り組んでいます。',
@@ -250,6 +252,7 @@ const tagGuide = isEnglish
       { tag: 'Operating Partner', copy: 'Supports the project’s operations and research-lab development.' },
       { tag: 'Development Partner', copy: 'Develops new technologies and businesses for space.' },
       { tag: 'Platform Partner', copy: 'Connects research with access to space and related services.' },
+      { tag: 'Knowledge-Centered Company', copy: 'A company rooted in its region that connects knowledge to create new value.', url: 'https://lne.st/2026/04/28/iknc/' },
       { tag: 'L-VENTURES', copy: 'Featured by L-VENTURES; this tag alone does not mean project participation.' },
     ]
   : [
@@ -257,6 +260,7 @@ const tagGuide = isEnglish
       { tag: '運営パートナー', copy: '研究所の立ち上げやプロジェクト運営を支えます。' },
       { tag: '開発パートナー', copy: '宇宙分野の新しい技術・事業を開発します。' },
       { tag: 'プラットフォームパートナー', copy: '研究と宇宙へのアクセス・利用機会をつなぎます。' },
+      { tag: '知識中核企業', copy: '地域に根ざし、知識をつないで新たな価値を共創する企業です。', url: 'https://lne.st/2026/04/28/iknc/' },
       { tag: 'L-VENTURES', copy: 'L-VENTURES掲載企業を示すタグで、プロジェクト参画を示すものではありません。' },
     ];
 ---
@@ -268,7 +272,7 @@ const tagGuide = isEnglish
     <p class="partner__context">{labels.context}</p>
     <div class="partner-tag-guide" aria-label={isEnglish ? 'Tag descriptions' : 'タグの説明'}>
       {tagGuide.map((item) => (
-        <p class="partner-tag-guide__row"><span class={item.tag === 'L-VENTURES' ? 'partner-tag partner-tag--ventures' : 'partner-tag'}>{item.tag}</span><span>{item.copy}</span></p>
+        <p class="partner-tag-guide__row"><span class={item.tag === 'L-VENTURES' ? 'partner-tag partner-tag--ventures' : 'partner-tag'}>{item.url ? <a href={item.url} target="_blank" rel="noreferrer">{item.tag}</a> : item.tag}</span><span>{item.copy}</span></p>
       ))}
     </div>
     <div class="partner-grid partner-grid--unified">
@@ -278,6 +282,11 @@ const tagGuide = isEnglish
           <article class="partner-card" data-partner={partner.id}>
             <div class="partner-card__tags" aria-label={isEnglish ? 'Company tags' : '企業タグ'}>
               {partner.category && <span class="partner-tag">{partner.category}</span>}
+              {partner.knowledgeCoreUrl && (
+                <a class="partner-tag" href={partner.knowledgeCoreUrl} target="_blank" rel="noreferrer">
+                  {isEnglish ? 'Knowledge-Centered Company' : '知識中核企業'}
+                </a>
+              )}
               {partner.lVenturesUrl && (
                 <a class="partner-tag partner-tag--ventures" href={partner.lVenturesUrl} target="_blank" rel="noreferrer">
                   {labels.venture}
